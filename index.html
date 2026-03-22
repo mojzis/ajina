@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Slovíčka — anglická slovíčka pro každý týden">
+    <meta property="og:title" content="Slovíčka">
+    <meta property="og:description" content="Anglická slovíčka pro každý týden">
+    <meta property="og:type" content="website">
+    <title>Slovíčka</title>
+
+    <!-- Google Fonts: Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== First Visit Intro Banner ===== -->
+    <div class="intro-banner" id="intro-banner" role="status" hidden>
+        <p class="intro-text">Klikni na kartičku a uč se anglicky!</p>
+        <button class="intro-dismiss" id="intro-dismiss" aria-label="Zavřít uvítání" title="Zavřít">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- ===== Header ===== -->
+    <header class="app-header">
+        <div class="header-accent" aria-hidden="true">
+            <!-- Decorative watercolor-style leaf SVG -->
+            <svg class="leaf-accent leaf-left" viewBox="0 0 40 40" width="32" height="32" aria-hidden="true">
+                <path d="M20 4 C10 10, 4 20, 10 30 C16 24, 22 16, 20 4Z" fill="var(--color-leaf)" opacity="0.5"/>
+                <path d="M20 4 C30 10, 36 20, 30 30 C24 24, 18 16, 20 4Z" fill="var(--color-leaf)" opacity="0.35"/>
+            </svg>
+        </div>
+        <h1 class="app-title">Slovíčka</h1>
+        <p class="app-subtitle" id="week-title"></p>
+        <div class="header-accent" aria-hidden="true">
+            <svg class="leaf-accent leaf-right" viewBox="0 0 40 40" width="32" height="32" aria-hidden="true">
+                <path d="M20 4 C10 10, 4 20, 10 30 C16 24, 22 16, 20 4Z" fill="var(--color-leaf)" opacity="0.5"/>
+                <path d="M20 4 C30 10, 36 20, 30 30 C24 24, 18 16, 20 4Z" fill="var(--color-leaf)" opacity="0.35"/>
+            </svg>
+        </div>
+    </header>
+
+    <!-- ===== Card Grid ===== -->
+    <main class="card-grid" id="card-grid" role="list" aria-label="Slovíčka">
+        <!-- Cards are rendered dynamically by app.js -->
+    </main>
+
+    <!-- ===== Card Detail Overlay ===== -->
+    <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Detail slovíčka" hidden>
+        <div class="overlay-backdrop" id="overlay-backdrop"></div>
+        <div class="overlay-content">
+            <!-- Close button -->
+            <button class="btn-close" id="btn-close" aria-label="Zavřít" title="Zavřít">
+                <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                    <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                    <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+            </button>
+
+            <!-- Navigation arrows -->
+            <button class="btn-nav btn-prev" id="btn-prev" aria-label="Předchozí slovíčko" title="Předchozí">
+                <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                    <polyline points="15,4 7,12 15,20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button class="btn-nav btn-next" id="btn-next" aria-label="Další slovíčko" title="Další">
+                <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                    <polyline points="9,4 17,12 9,20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <!-- Flip card -->
+            <div class="card-scene" id="card-scene">
+                <div class="card-flipper" id="card-flipper">
+                    <!-- Front: Czech side -->
+                    <div class="card-front card-face">
+                        <div class="card-image-wrap">
+                            <img class="card-image" id="card-image-front" src="" alt="" loading="lazy">
+                        </div>
+                        <p class="card-word card-word-cs" id="card-word-cs"></p>
+                        <button class="btn-audio" id="btn-audio-cs" aria-label="Přehrát výslovnost česky" title="Přehrát">
+                            <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                                <path d="M3 9v6h4l5 5V4L7 9H3z" fill="currentColor"/>
+                                <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <p class="card-hint">Klepni pro otočení</p>
+                    </div>
+
+                    <!-- Back: English side -->
+                    <div class="card-back card-face">
+                        <div class="card-image-wrap">
+                            <img class="card-image" id="card-image-back" src="" alt="" loading="lazy">
+                        </div>
+                        <p class="card-word card-word-en" lang="en" id="card-word-en"></p>
+                        <p class="card-pronunciation" lang="en" id="card-pronunciation"></p>
+                        <button class="btn-audio" id="btn-audio-en" aria-label="Přehrát výslovnost anglicky" title="Přehrát">
+                            <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                                <path d="M3 9v6h4l5 5V4L7 9H3z" fill="currentColor"/>
+                                <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" fill="currentColor"/>
+                                <path d="M19 12c0-3.17-1.82-5.91-4.47-7.24v1.74C16.36 7.83 17.7 9.78 17.7 12s-1.34 4.17-3.17 5.5v1.74C17.18 17.91 19 15.17 19 12z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <!-- Next card prompt (shown after flip + audio) -->
+                        <p class="next-prompt" id="next-prompt" hidden>
+                            <button class="btn-next-prompt" id="btn-next-prompt" aria-label="Další slovíčko">
+                                Další slovíčko &rarr;
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card counter -->
+            <p class="card-counter" id="card-counter" aria-live="polite"></p>
+        </div>
+    </div>
+
+    <!-- ===== Week Selector (bottom of page) ===== -->
+    <footer class="app-footer">
+        <label for="week-select" class="week-label">Týden:</label>
+        <select id="week-select" class="week-select"></select>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

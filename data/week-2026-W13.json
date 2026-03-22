@@ -1,0 +1,53 @@
+{
+  "week_id": "2026-W13",
+  "title": "Zvířata",
+  "title_en": "Animals",
+  "published": "2026-03-22",
+  "words": [
+    {
+      "id": "cat",
+      "czech": "kočka",
+      "english": "cat",
+      "pronunciation": "ket",
+      "image": "cat.webp",
+      "audio_cs": "cat_cs.mp3",
+      "audio_en": "cat_en.mp3"
+    },
+    {
+      "id": "dog",
+      "czech": "pes",
+      "english": "dog",
+      "pronunciation": "dog",
+      "image": "dog.webp",
+      "audio_cs": "dog_cs.mp3",
+      "audio_en": "dog_en.mp3"
+    },
+    {
+      "id": "bird",
+      "czech": "pták",
+      "english": "bird",
+      "pronunciation": "bérd",
+      "image": "bird.webp",
+      "audio_cs": "bird_cs.mp3",
+      "audio_en": "bird_en.mp3"
+    },
+    {
+      "id": "fish",
+      "czech": "ryba",
+      "english": "fish",
+      "pronunciation": "fiš",
+      "image": "fish.webp",
+      "audio_cs": "fish_cs.mp3",
+      "audio_en": "fish_en.mp3"
+    },
+    {
+      "id": "horse",
+      "czech": "kůň",
+      "english": "horse",
+      "pronunciation": "hórs",
+      "image": "horse.webp",
+      "audio_cs": "horse_cs.mp3",
+      "audio_en": "horse_en.mp3"
+    }
+  ]
+}
