@@ -5,9 +5,12 @@ and produces a week JSON file + updates the index.
 """
 
 import argparse
+import json
 import re
 import sys
+from datetime import date
 from pathlib import Path
+from typing import Any, cast
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
@@ -46,6 +49,59 @@ def parse_line(line: str) -> dict[str, str] | None:
     }
 
 
+def deduplicate_words(words: list[dict[str, str]]) -> list[dict[str, str]]:
+    """Remove duplicate words by id, keeping the first occurrence."""
+    seen: set[str] = set()
+    unique: list[dict[str, str]] = []
+    for word in words:
+        if word["id"] not in seen:
+            seen.add(word["id"])
+            unique.append(word)
+        else:
+            print(f"  Skipping duplicate: {word['english']!r}", file=sys.stderr)
+    return unique
+
+
+def update_index(data_dir: Path, week_id: str, title: str, title_en: str, word_count: int) -> None:
+    """Update site/data/index.json with this week's entry."""
+    index_path = data_dir / "index.json"
+
+    if index_path.exists():
+        index_data: dict[str, Any] = json.loads(index_path.read_text(encoding="utf-8"))
+    else:
+        index_data = {"current_week": "", "weeks": []}
+
+    # Update or add week entry
+    week_entry: dict[str, Any] = {
+        "week_id": week_id,
+        "title": title,
+        "title_en": title_en,
+        "published": date.today().isoformat(),
+        "word_count": word_count,
+    }
+
+    # Replace existing entry or append
+    weeks = cast(list[dict[str, Any]], index_data["weeks"])
+    found = False
+    for i, w in enumerate(weeks):
+        if w["week_id"] == week_id:
+            weeks[i] = week_entry
+            found = True
+            break
+    if not found:
+        weeks.insert(0, week_entry)
+
+    # Set as current week
+    index_data["current_week"] = week_id
+
+    # Sort weeks by week_id descending
+    weeks.sort(key=lambda w: w["week_id"], reverse=True)
+
+    content = json.dumps(index_data, indent=2, ensure_ascii=False) + "\n"
+    index_path.write_text(content, encoding="utf-8")
+    print(f"  Updated index: {index_path}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", required=True, type=Path, help="Path to word list file")
@@ -54,22 +110,43 @@ def main() -> None:
     parser.add_argument("--title-en", required=True, help="English title for the week")
     args = parser.parse_args()
 
-    # TODO: Implement in Phase 3
-    print(f"[parse_words] Would parse {args.input}")
-    print(f"  Week: {args.week}")
-    print(f"  Title: {args.title} / {args.title_en}")
-
     input_path = Path(args.input)
     if not input_path.exists():
         print(f"  ERROR: Input file not found: {input_path}", file=sys.stderr)
         sys.exit(1)
 
+    print(f"[parse_words] Parsing {input_path}")
+    print(f"  Week: {args.week}")
+    print(f"  Title: {args.title} / {args.title_en}")
+
     lines = input_path.read_text(encoding="utf-8").splitlines()
     words = [w for line in lines if (w := parse_line(line)) is not None]
-    print(f"  Parsed {len(words)} words")
+    words = deduplicate_words(words)
 
+    print(f"  Parsed {len(words)} words:")
     for word in words:
-        print(f"    {word['czech']} → {word['english']} [{word['pronunciation']}]")
+        pron = f" [{word['pronunciation']}]" if word["pronunciation"] else ""
+        print(f"    {word['czech']} -> {word['english']}{pron}")
+
+    # Write week JSON
+    data_dir = PROJECT_ROOT / "site" / "data"
+    data_dir.mkdir(parents=True, exist_ok=True)
+
+    week_data = {
+        "week_id": args.week,
+        "title": args.title,
+        "title_en": args.title_en,
+        "published": date.today().isoformat(),
+        "words": words,
+    }
+
+    week_path = data_dir / f"week-{args.week}.json"
+    content = json.dumps(week_data, indent=2, ensure_ascii=False) + "\n"
+    week_path.write_text(content, encoding="utf-8")
+    print(f"  Wrote week data: {week_path}")
+
+    # Update index
+    update_index(data_dir, args.week, args.title, args.title_en, len(words))
 
 
 if __name__ == "__main__":

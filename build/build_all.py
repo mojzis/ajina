@@ -20,7 +20,7 @@ def run_step(name: str, cmd: list[str]) -> None:
     print(f"\n{'=' * 60}")
     print(f"  {name}")
     print(f"{'=' * 60}\n")
-    result = subprocess.run(cmd, cwd=PROJECT_ROOT)
+    result = subprocess.run(cmd, cwd=PROJECT_ROOT)  # noqa: S603
     if result.returncode != 0:
         print(f"\nERROR: {name} failed (exit code {result.returncode})", file=sys.stderr)
         sys.exit(result.returncode)

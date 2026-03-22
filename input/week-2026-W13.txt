@@ -1,0 +1,5 @@
+kočka, cat, ket
+pes, dog, dog
+pták, bird, bérd
+ryba, fish, fiš
+kůň, horse, hórs
