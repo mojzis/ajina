@@ -12,7 +12,11 @@ import subprocess
 import sys
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+load_dotenv(PROJECT_ROOT / ".env")
 
 
 def run_step(name: str, cmd: list[str]) -> None:
@@ -34,6 +38,12 @@ def main() -> None:
     parser.add_argument("--input", required=True, type=Path, help="Path to word list file")
     parser.add_argument("--skip-images", action="store_true", help="Skip image generation")
     parser.add_argument("--skip-audio", action="store_true", help="Skip audio generation")
+    parser.add_argument(
+        "--mode",
+        choices=["placeholder", "api"],
+        default="placeholder",
+        help="Image generation mode (default: placeholder)",
+    )
     args = parser.parse_args()
 
     python = sys.executable
@@ -59,7 +69,7 @@ def main() -> None:
     if not args.skip_images:
         run_step(
             "Generate images",
-            [python, "build/generate_images.py", "--week", args.week],
+            [python, "build/generate_images.py", "--week", args.week, "--mode", args.mode],
         )
     else:
         print("\n  Skipping image generation")

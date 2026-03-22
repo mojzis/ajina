@@ -23,9 +23,12 @@ from collections import deque
 from pathlib import Path
 
 import numpy as np
+from dotenv import load_dotenv
 from PIL import Image, ImageDraw, ImageFont
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+load_dotenv(PROJECT_ROOT / ".env")
 
 PROMPT_TEMPLATE = (
     "A hand-drawn illustration in the style of a vintage natural history atlas.\n"
