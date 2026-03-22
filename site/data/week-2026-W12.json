@@ -1,0 +1,62 @@
+{
+  "week_id": "2026-W12",
+  "title": "Barvy",
+  "title_en": "Colors",
+  "published": "2026-03-16",
+  "words": [
+    {
+      "id": "red",
+      "czech": "červená",
+      "english": "red",
+      "pronunciation": "red",
+      "image": "red.webp",
+      "audio_cs": "red_cs.mp3",
+      "audio_en": "red_en.mp3"
+    },
+    {
+      "id": "blue",
+      "czech": "modrá",
+      "english": "blue",
+      "pronunciation": "blú",
+      "image": "blue.webp",
+      "audio_cs": "blue_cs.mp3",
+      "audio_en": "blue_en.mp3"
+    },
+    {
+      "id": "green",
+      "czech": "zelená",
+      "english": "green",
+      "pronunciation": "grín",
+      "image": "green.webp",
+      "audio_cs": "green_cs.mp3",
+      "audio_en": "green_en.mp3"
+    },
+    {
+      "id": "yellow",
+      "czech": "žlutá",
+      "english": "yellow",
+      "pronunciation": "jelov",
+      "image": "yellow.webp",
+      "audio_cs": "yellow_cs.mp3",
+      "audio_en": "yellow_en.mp3"
+    },
+    {
+      "id": "white",
+      "czech": "bílá",
+      "english": "white",
+      "pronunciation": "vajt",
+      "image": "white.webp",
+      "audio_cs": "white_cs.mp3",
+      "audio_en": "white_en.mp3"
+    },
+    {
+      "id": "black",
+      "czech": "černá",
+      "english": "black",
+      "pronunciation": "blek",
+      "image": "black.webp",
+      "audio_cs": "black_cs.mp3",
+      "audio_en": "black_en.mp3"
+    }
+  ]
+}

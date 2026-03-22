@@ -166,6 +166,23 @@ If pronunciation is omitted, the build script should try to generate a reasonabl
 
 ---
 
+## Relationship to ESL Project
+
+The `../esl` project (ESL Worksheet Generator) shares several components that
+should be reused rather than rebuilt:
+
+| Component | ESL Location | Reuse Strategy |
+|-----------|-------------|----------------|
+| Image generation (Replicate API) | `esl/image_gen.py` | Port the API integration, prompt template, background removal |
+| Image caching & lookup | `esl/image_lookup.py` | Port the caching pattern (filename convention, skip-existing) |
+| Image resolution fallback | `esl/image_resolver.py` | Port the 3-tier fallback (cache → generate → placeholder SVG) |
+| Project setup | `pyproject.toml` | Follow same conventions: UV, ruff, pyproject.toml |
+| Linting/formatting | ruff config | Use same ruff setup |
+
+Both projects share the same `REPLICATE_API_TOKEN` env var.
+
+---
+
 ## Technical Decisions
 
 ### Audio: Pre-generated with edge-tts (not browser TTS)
@@ -184,7 +201,12 @@ If pronunciation is omitted, the build script should try to generate a reasonabl
 - Audio files are small (~10-30KB per word), so total per week is negligible
 - Fallback: if audio fails to load, show a "tap to hear" button that tries browser TTS
 
-### Images: Generated via Image Generation API
+### Images: Generated via Replicate API (reuse from ESL project)
+
+> **We already have a working image generation pipeline in `../esl`.**
+> Reuse the Replicate API integration (`esl/image_gen.py`), background removal,
+> and image caching (`esl/image_lookup.py`). Same `REPLICATE_API_TOKEN` env var.
+> Model: `cuuupid/sdxl-lineart` — 512×512, 20 inference steps, guidance 9, K_EULER scheduler.
 
 **Style prompt prefix (use consistently for all images):**
 ```
@@ -195,8 +217,10 @@ No text in the image.
 Subject: [WORD]
 ```
 
-- Generate at ~512×512 or similar square format
+- Generate at 512×512 via Replicate API with SDXL-lineart model
+- Run background removal (flood-fill cleaning, same as ESL)
 - Convert to WebP for smaller file size
+- Cache generated images, skip existing on re-runs
 - Store one set of images per week
 
 ### Frontend: Vanilla HTML/CSS/JS

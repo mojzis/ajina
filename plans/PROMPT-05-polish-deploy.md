@@ -36,6 +36,10 @@ Review and improve the frontend for these specific scenarios:
 
 ### GitHub Pages Deployment
 
+> **NOTE:** The ESL project (`../esl`) has a working GitHub Actions CI/CD pipeline
+> (`.github/workflows/test.yml`) and Docker deployment (`Dockerfile`, `deploy.sh`).
+> Reference those for patterns, though this project's deployment is simpler (static site).
+
 Set up the repo for GitHub Pages:
 
 1. Create a `deploy.sh` script that:

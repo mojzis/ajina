@@ -1,0 +1,41 @@
+[project]
+name = "slovicka"
+version = "0.1.0"
+description = "Static flashcard web app for learning English, designed for people with mental disabilities"
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "edge-tts>=6.1.0",
+    "pillow>=11.3.0",
+]
+
+[dependency-groups]
+dev = [
+    "poethepoet>=0.42.1",
+    "pytest>=9.0.2",
+    "ruff>=0.13.3",
+    "ty>=0.0.1a21",
+]
+
+[tool.uv]
+package = false
+
+[tool.poe]
+verbosity = -1
+
+[tool.poe.tasks]
+lint = "ruff check --quiet ."
+format = "ruff format --quiet --check ."
+type = "ty check --quiet"
+test = "python -m pytest -q tests/"
+check = ["lint", "format", "type", "test"]
+
+[tool.pytest.ini_options]
+addopts = "--tb=short --no-header"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]

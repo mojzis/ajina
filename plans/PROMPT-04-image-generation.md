@@ -2,11 +2,19 @@
 
 Use this prompt when you're ready to connect real image generation (replacing the placeholder SVGs).
 
+> **NOTE:** We already have a working image generation system in `../esl`. Reuse the
+> proven patterns from there rather than building from scratch. Key files to study:
+> - `../esl/esl/image_gen.py` — Replicate API integration, background removal
+> - `../esl/esl/image_lookup.py` — Image caching & discovery system
+> - `../esl/esl/image_resolver.py` — Image resolution with 3-tier fallback
+
 ---
 
 ## Prompt
 
 Read `PROJECT.md` for full context. Now implement the real image generation in `build/generate_images.py`.
+
+**Before you start**, study the working image generation in `../esl/esl/image_gen.py` and `../esl/esl/image_lookup.py`. Reuse the same Replicate API approach, background removal logic, and caching patterns. Adapt them for this project's needs.
 
 ### Image Style
 
@@ -36,21 +44,43 @@ For abstract concepts (colors, actions), adapt the subject:
 - Actions: "a person [DOING THE ACTION]" in the same style
 - Household items: straightforward illustration
 
-### Implementation
+### Implementation — Reuse from ESL
 
-Update `generate_images.py` to:
+The ESL project (`../esl`) already has a working implementation. Adapt it:
 
-1. Accept an `--api-key` argument or read from `NANOBANANA_API_KEY` env var (or whatever the image gen service requires — adapt as needed)
+**From `../esl/esl/image_gen.py`:**
+- Replicate API integration using `cuuupid/sdxl-lineart` model
+- API config: 512×512, 20 inference steps, guidance scale 9, K_EULER scheduler
+- Background removal via flood-fill cleaning (brightness threshold 240px)
+- Generates `_cleaned` versions alongside originals
+- Read `REPLICATE_API_TOKEN` from env var
+
+**From `../esl/esl/image_lookup.py`:**
+- Image caching in a dedicated directory (ESL uses `img_words/`)
+- Filename convention: `{word}_{timestamp}_{prompt_hash}.png`
+- Skip-existing logic for batch generation
+- Prefers cleaned versions automatically
+
+Adapt `generate_images.py` to:
+
+1. Use `REPLICATE_API_TOKEN` env var (same as ESL — one token for both projects)
 2. For each word:
+   - Check cache first (skip if exists, unless `--force`)
    - Construct the prompt using the template above
-   - Call the image generation API
-   - Save the result as PNG, then convert to WebP using Pillow (`quality=85`)
+   - Call Replicate API with SDXL-lineart model (same config as ESL)
+   - Run background removal (port the flood-fill cleaning from ESL)
+   - Save as PNG, then convert to WebP using Pillow (`quality=85`)
    - Target size: 512×512px
 3. Add a `--review` mode that generates images and opens them in a grid (simple HTML page) for manual review before committing
 4. Add a `--regenerate cat,dog` flag to regenerate specific words only
 5. Save the raw API prompt used for each image in a sidecar file (`{id}.prompt.txt`) for reproducibility
 
 ### Fallback
+
+Use the same 3-tier fallback as ESL (`../esl/esl/image_resolver.py`):
+1. Check for pre-made/cached images
+2. Attempt generation via Replicate API
+3. Fall back to placeholder SVG
 
 If the API is unavailable or fails:
 - Log the error clearly
@@ -59,7 +89,8 @@ If the API is unavailable or fails:
 
 ### Image Post-Processing
 
-After generation:
+After generation (reuse ESL's approach):
+- Run background removal (flood-fill cleaning from `image_gen.py`)
 - Convert to WebP (Pillow)
 - Ensure dimensions are exactly 512×512 (crop/pad if needed)
 - Optimize file size (target: under 100KB per image)

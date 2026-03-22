@@ -67,16 +67,24 @@ Install edge-tts: `pip install edge-tts`
 
 ### `build/generate_images.py`
 
-Generates illustrations for each word. This script is a STUB that will be connected to the actual image generation API later.
+Generates illustrations for each word using the Replicate API.
 
-For now, implement it as:
+> **NOTE:** The ESL project (`../esl`) already has a working image generation system.
+> Study `../esl/esl/image_gen.py` and `../esl/esl/image_lookup.py` and reuse their
+> patterns: Replicate API with SDXL-lineart model, background removal, caching.
+> See `PROMPT-04-image-generation.md` for full details on the reuse strategy.
+
+For the initial scaffold (this prompt), implement a **dual-mode** version:
 1. Read the week JSON file
-2. For each word, generate a placeholder image:
-   - A 512×512 SVG with a soft pastel background color (different per word, generated from hash of word)
+2. `--mode placeholder` (default): Generate a 512×512 SVG placeholder
+   - Soft pastel background color (different per word, generated from hash of word)
    - The word centered in a handwriting-style font
    - Saved as `site/assets/images/week-{week_id}/{id}.webp`
-3. Include a commented-out section showing how the real API call would work
-4. The real implementation will use a prompt like:
+3. `--mode api`: Use Replicate API (same approach as `../esl/esl/image_gen.py`)
+   - Model: `cuuupid/sdxl-lineart` (512×512, 20 steps, guidance 9, K_EULER)
+   - Background removal via flood-fill cleaning
+   - Reads `REPLICATE_API_TOKEN` from env var
+   - Caches generated images, skips existing unless `--force`
 
 ```python
 STYLE_PREFIX = """A lovely hand-drawn illustration in the style of a vintage natural history atlas.
@@ -87,12 +95,13 @@ Single subject, centered, no text in the image."""
 prompt = f"{STYLE_PREFIX}\nSubject: {word['english']}"
 ```
 
-5. Update the JSON with image paths
+4. Update the JSON with image paths
 
 Arguments:
 - `--week` — which week
 - `--force` — regenerate
-- `--api` — when set to `real`, use the actual API (future); default is `placeholder`
+- `--mode` — `placeholder` (default) or `api`
+- `--regenerate` — regenerate specific words only (e.g. `--regenerate cat,dog`)
 
 ### `build/build_site.py`
 

@@ -1,0 +1,21 @@
+# Generated assets (images, audio)
+site/assets/
+
+# Keep data files
+!site/data/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+
+# Node
+node_modules/
+
+# Environment
+.env
+
+# OS
+.DS_Store
