@@ -19,7 +19,9 @@
         currentCardIndex: 0,
         isFlipped: false,
         isDetailOpen: false,
-        weeksIndex: null       // the full index.json data
+        weeksIndex: null,      // the full index.json data
+        visitedCards: {},       // tracks visited card indices per session
+        nextPromptTimer: null   // timer for showing "next" prompt
     };
 
     // =========================================================
@@ -46,6 +48,10 @@
         dom.btnNext = document.getElementById("btn-next");
         dom.btnAudioCs = document.getElementById("btn-audio-cs");
         dom.btnAudioEn = document.getElementById("btn-audio-en");
+        dom.introBanner = document.getElementById("intro-banner");
+        dom.introDismiss = document.getElementById("intro-dismiss");
+        dom.nextPrompt = document.getElementById("next-prompt");
+        dom.btnNextPrompt = document.getElementById("btn-next-prompt");
     }
 
     // =========================================================
@@ -72,10 +78,11 @@
     function init() {
         cacheDom();
         bindEvents();
+        showIntroBanner();
 
         fetchJSON("data/index.json").then(function (data) {
             if (!data || !data.weeks || data.weeks.length === 0) {
-                showEmpty("Žádná slovíčka nejsou k dispozici.");
+                showError("Něco se pokazilo. Zkus to znovu.");
                 return;
             }
 
@@ -111,11 +118,17 @@
 
         fetchJSON("data/week-" + weekId + ".json").then(function (data) {
             if (!data || !data.words || data.words.length === 0) {
-                showEmpty("Pro tento týden nejsou žádná slovíčka.");
+                showError("Pro tento týden nejsou žádná slovíčka.");
                 return;
             }
 
             state.words = data.words;
+
+            // Reset visited cards for new week
+            if (!state.visitedCards[weekId]) {
+                state.visitedCards[weekId] = {};
+            }
+
             renderGrid(data.words, weekId);
 
             // Check hash for detail view
@@ -140,6 +153,31 @@
     }
 
     // =========================================================
+    // Intro Banner
+    // =========================================================
+
+    /**
+     * Show the intro banner if not already dismissed this session.
+     */
+    function showIntroBanner() {
+        try {
+            if (sessionStorage.getItem("slovicka-intro-dismissed")) return;
+        } catch (e) {
+            // sessionStorage not available — show banner anyway
+        }
+        dom.introBanner.hidden = false;
+    }
+
+    function dismissIntroBanner() {
+        dom.introBanner.hidden = true;
+        try {
+            sessionStorage.setItem("slovicka-intro-dismissed", "1");
+        } catch (e) {
+            // Ignore storage errors
+        }
+    }
+
+    // =========================================================
     // Rendering
     // =========================================================
 
@@ -152,27 +190,66 @@
     }
 
     /**
-     * Render the card grid from word data.
+     * Show an error message with a retry button.
+     */
+    function showError(message) {
+        dom.grid.innerHTML =
+            '<div class="error-message">' +
+                '<p>' + escapeHtml(message) + '</p>' +
+                '<button class="btn-retry" id="btn-retry">Zkusit znovu</button>' +
+            '</div>';
+        var btnRetry = document.getElementById("btn-retry");
+        if (btnRetry) {
+            btnRetry.addEventListener("click", function () {
+                init();
+            });
+        }
+    }
+
+    /**
+     * Render the card grid from word data with stagger animation.
      */
     function renderGrid(words, weekId) {
+        var visited = state.visitedCards[weekId] || {};
         var html = "";
         for (var i = 0; i < words.length; i++) {
             var word = words[i];
             var imgSrc = "data/" + weekId + "/" + word.image;
+            var visitedClass = visited[i] ? " visited" : "";
             html +=
-                '<div class="grid-card" role="listitem" tabindex="0" data-index="' + i + '">' +
+                '<div class="grid-card' + visitedClass + '" role="listitem" tabindex="0"' +
+                    ' data-index="' + i + '"' +
+                    ' style="--stagger-index: ' + i + '">' +
                     '<img class="grid-card-image" src="' + escapeAttr(imgSrc) + '"' +
                         ' alt="' + escapeAttr(word.czech) + '"' +
-                        ' loading="' + (i < 4 ? "eager" : "lazy") + '">' +
+                        ' loading="' + (i < 6 ? "eager" : "lazy") + '">' +
                     '<p class="grid-card-label">' + escapeHtml(word.czech) + '</p>' +
                 '</div>';
         }
         dom.grid.innerHTML = html;
 
-        // Preload first few images (they should already be eager, but also preload audio)
-        if (words.length > 0) {
-            preloadCardAudio(0, weekId);
+        // Preload audio for the first 2 cards
+        for (var j = 0; j < Math.min(2, words.length); j++) {
+            preloadCardAudio(j, weekId);
         }
+    }
+
+    /**
+     * Fade out the grid, replace content, then fade in.
+     * Used for week transitions.
+     */
+    function transitionGrid(words, weekId) {
+        dom.grid.classList.add("fading-out");
+
+        setTimeout(function () {
+            renderGrid(words, weekId);
+            dom.grid.classList.remove("fading-out");
+            dom.grid.classList.add("fading-in");
+
+            setTimeout(function () {
+                dom.grid.classList.remove("fading-in");
+            }, 350);
+        }, 260);
     }
 
     // =========================================================
@@ -187,8 +264,24 @@
         state.isFlipped = false;
         state.isDetailOpen = true;
 
+        // Mark card as visited
+        var weekId = state.currentWeek;
+        if (!state.visitedCards[weekId]) {
+            state.visitedCards[weekId] = {};
+        }
+        state.visitedCards[weekId][index] = true;
+
+        // Update grid card to show visited indicator
+        var gridCard = dom.grid.querySelector('[data-index="' + index + '"]');
+        if (gridCard) {
+            gridCard.classList.add("visited");
+        }
+
         // Reset flip
         dom.cardFlipper.classList.remove("flipped");
+
+        // Hide next prompt
+        hideNextPrompt();
 
         // Populate card content
         populateCard(index);
@@ -219,6 +312,7 @@
         dom.overlay.hidden = true;
         document.body.style.overflow = "";
         stopAllAudio();
+        hideNextPrompt();
 
         // Clear hash
         if (window.history && window.history.replaceState) {
@@ -271,9 +365,37 @@
                     playAudio("en");
                 }
             }, 500);
+
+            // Show "next" prompt after a few seconds (if not last card)
+            scheduleNextPrompt();
         } else {
             dom.cardFlipper.classList.remove("flipped");
+            hideNextPrompt();
         }
+    }
+
+    /**
+     * Show a gentle "next" prompt after a delay on the English side.
+     */
+    function scheduleNextPrompt() {
+        hideNextPrompt();
+
+        // Only show if there is a next card
+        if (state.currentCardIndex >= state.words.length - 1) return;
+
+        state.nextPromptTimer = setTimeout(function () {
+            if (state.isDetailOpen && state.isFlipped) {
+                dom.nextPrompt.hidden = false;
+            }
+        }, 3000);
+    }
+
+    function hideNextPrompt() {
+        if (state.nextPromptTimer) {
+            clearTimeout(state.nextPromptTimer);
+            state.nextPromptTimer = null;
+        }
+        dom.nextPrompt.hidden = true;
     }
 
     /**
@@ -309,6 +431,7 @@
     // =========================================================
     var audioCache = {};
     var currentAudio = null;
+    var currentAudioBtn = null;
 
     /**
      * Preload audio files for a given card index.
@@ -345,6 +468,12 @@
 
         stopAllAudio();
 
+        // Determine which button to animate
+        var btn = lang === "cs" ? dom.btnAudioCs : dom.btnAudioEn;
+        btn.classList.add("playing");
+        btn.classList.remove("done");
+        currentAudioBtn = btn;
+
         // Try cached audio element
         var audio = audioCache[url];
         if (!audio) {
@@ -355,9 +484,21 @@
         currentAudio = audio;
         audio.currentTime = 0;
 
+        // When audio ends, show done state briefly
+        audio.onended = function () {
+            btn.classList.remove("playing");
+            btn.classList.add("done");
+            setTimeout(function () {
+                btn.classList.remove("done");
+            }, 800);
+            currentAudio = null;
+            currentAudioBtn = null;
+        };
+
         var playPromise = audio.play();
         if (playPromise && playPromise.catch) {
             playPromise.catch(function () {
+                btn.classList.remove("playing");
                 // Audio failed — try speechSynthesis as fallback
                 trySpeechFallback(word, lang);
             });
@@ -381,7 +522,13 @@
      * Stop any currently playing audio.
      */
     function stopAllAudio() {
+        if (currentAudioBtn) {
+            currentAudioBtn.classList.remove("playing");
+            currentAudioBtn.classList.remove("done");
+            currentAudioBtn = null;
+        }
         if (currentAudio) {
+            currentAudio.onended = null;
             currentAudio.pause();
             currentAudio.currentTime = 0;
             currentAudio = null;
@@ -406,6 +553,54 @@
                 '</option>';
         }
         dom.weekSelect.innerHTML = html;
+    }
+
+    /**
+     * Switch weeks with a smooth fade transition.
+     */
+    function switchWeek(weekId) {
+        if (weekId === state.currentWeek) return;
+
+        state.currentWeek = weekId;
+
+        // Update selector to reflect loaded week
+        if (dom.weekSelect.value !== weekId) {
+            dom.weekSelect.value = weekId;
+        }
+
+        // Update subtitle
+        var weekInfo = findWeekInfo(weekId);
+        if (weekInfo) {
+            dom.weekTitle.textContent = weekInfo.title + " — " + weekInfo.title_en;
+        }
+
+        // Fade out, load, fade in
+        dom.grid.classList.add("fading-out");
+
+        fetchJSON("data/week-" + weekId + ".json").then(function (data) {
+            // Small delay to let fade-out complete
+            setTimeout(function () {
+                if (!data || !data.words || data.words.length === 0) {
+                    dom.grid.classList.remove("fading-out");
+                    showEmpty("Pro tento týden nejsou žádná slovíčka.");
+                    return;
+                }
+
+                state.words = data.words;
+
+                if (!state.visitedCards[weekId]) {
+                    state.visitedCards[weekId] = {};
+                }
+
+                renderGrid(data.words, weekId);
+                dom.grid.classList.remove("fading-out");
+                dom.grid.classList.add("fading-in");
+
+                setTimeout(function () {
+                    dom.grid.classList.remove("fading-in");
+                }, 350);
+            }, 260);
+        });
     }
 
     // =========================================================
@@ -482,6 +677,12 @@
                 var index = parseInt(card.getAttribute("data-index"), 10);
                 openDetail(index);
             }
+
+            // Retry button (delegated)
+            var retry = e.target.closest(".btn-retry");
+            if (retry) {
+                init();
+            }
         });
 
         // Grid card keyboard activation
@@ -512,8 +713,8 @@
 
         // Flip card by clicking on it
         dom.cardScene.addEventListener("click", function (e) {
-            // Don't flip if clicking audio button or nav
-            if (e.target.closest(".btn-audio") || e.target.closest(".btn-nav")) return;
+            // Don't flip if clicking audio button, nav, or next prompt
+            if (e.target.closest(".btn-audio") || e.target.closest(".btn-nav") || e.target.closest(".btn-next-prompt")) return;
             flipCard();
         });
 
@@ -527,14 +728,23 @@
             playAudio("en");
         });
 
-        // Week selector
+        // Next prompt button
+        dom.btnNextPrompt.addEventListener("click", function (e) {
+            e.stopPropagation();
+            nextCard();
+        });
+
+        // Week selector — use smooth transition
         dom.weekSelect.addEventListener("change", function () {
             var weekId = dom.weekSelect.value;
             if (weekId && weekId !== state.currentWeek) {
                 closeDetail();
-                loadWeek(weekId);
+                switchWeek(weekId);
             }
         });
+
+        // Intro banner dismiss
+        dom.introDismiss.addEventListener("click", dismissIntroBanner);
 
         // Keyboard navigation
         document.addEventListener("keydown", function (e) {

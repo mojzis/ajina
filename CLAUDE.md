@@ -88,6 +88,6 @@ Use grep for: string literals, config values, TODOs, non-Python files.
 
 - [x] Phase 1 — Project Setup (plans/PROMPT-01-setup.md)
 - [x] Phase 2 — Frontend Template (plans/PROMPT-02-frontend.md)
-- [ ] Phase 3 — Build Pipeline (plans/PROMPT-03-build-pipeline.md)
-- [ ] Phase 4 — Image Generation (plans/PROMPT-04-image-generation.md)
-- [ ] Phase 5 — Polish & Deploy (plans/PROMPT-05-polish-deploy.md)
+- [x] Phase 3 — Build Pipeline (plans/PROMPT-03-build-pipeline.md)
+- [x] Phase 4 — Image Generation (plans/PROMPT-04-image-generation.md)
+- [x] Phase 5 — Polish & Deploy (plans/PROMPT-05-polish-deploy.md)

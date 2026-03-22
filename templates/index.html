@@ -18,6 +18,17 @@
 </head>
 <body>
 
+    <!-- ===== First Visit Intro Banner ===== -->
+    <div class="intro-banner" id="intro-banner" role="status" hidden>
+        <p class="intro-text">Klikni na kartičku a uč se anglicky!</p>
+        <button class="intro-dismiss" id="intro-dismiss" aria-label="Zavřít uvítání" title="Zavřít">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+    </div>
+
     <!-- ===== Header ===== -->
     <header class="app-header">
         <div class="header-accent" aria-hidden="true">
@@ -98,6 +109,12 @@
                                 <path d="M19 12c0-3.17-1.82-5.91-4.47-7.24v1.74C16.36 7.83 17.7 9.78 17.7 12s-1.34 4.17-3.17 5.5v1.74C17.18 17.91 19 15.17 19 12z" fill="currentColor"/>
                             </svg>
                         </button>
+                        <!-- Next card prompt (shown after flip + audio) -->
+                        <p class="next-prompt" id="next-prompt" hidden>
+                            <button class="btn-next-prompt" id="btn-next-prompt" aria-label="Další slovíčko">
+                                Další slovíčko &rarr;
+                            </button>
+                        </p>
                     </div>
                 </div>
             </div>
