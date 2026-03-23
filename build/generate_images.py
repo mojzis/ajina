@@ -19,10 +19,8 @@ import io
 import json
 import os
 import sys
-from collections import deque
 from pathlib import Path
 
-import numpy as np
 from dotenv import load_dotenv
 from PIL import Image, ImageDraw, ImageFont
 
@@ -30,17 +28,34 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 load_dotenv(PROJECT_ROOT / ".env")
 
-PROMPT_TEMPLATE = (
-    "A hand-drawn illustration in the style of a vintage natural history atlas.\n"
-    "Black ink contours with soft watercolor fills in warm, natural colors.\n"
-    "Clean white background. Single centered subject. No text.\n"
-    "Charming and clear, suitable for an educational card.\n"
-    "Subject: a {word}"
-)
+PROMPT_VARIANTS: dict[str, str] = {
+    "atlas": (
+        "A hand-drawn illustration in the style of a vintage natural history atlas.\n"
+        "Black ink contours with soft watercolor fills in warm, natural colors.\n"
+        "Clean white background. Single centered subject. No text.\n"
+        "Charming and clear, suitable for an educational card.\n"
+        "Subject: a {word}"
+    ),
+    "kawaii": (
+        "A single {word}, cute kawaii style illustration with bold black outlines.\n"
+        "Bright vivid colors, simple shapes, cheerful expression.\n"
+        "Solid white background, centered, no text, no extra objects.\n"
+        "Children's educational flashcard style."
+    ),
+    "flat": (
+        "A single {word}, modern flat vector illustration.\n"
+        "Bold geometric shapes, bright saturated colors, clean edges.\n"
+        "Solid white background, centered composition, one subject only.\n"
+        "No text, no shadows, no gradients. Educational poster style."
+    ),
+}
+
+DEFAULT_VARIANT = "atlas"
 
 NEGATIVE_PROMPT = (
     "text, words, letters, labels, captions, watermark, signature, "
-    "multiple subjects, busy background, photorealistic, 3d render"
+    "multiple subjects, busy background, photorealistic, 3d render, "
+    "abstract, blurry, duplicate, several animals, crowd"
 )
 
 # Replicate model config (same as ESL)
@@ -51,11 +66,6 @@ IMAGE_SIZE = 512
 INFERENCE_STEPS = 20
 GUIDANCE_SCALE = 9
 SCHEDULER = "K_EULER"
-
-# Background removal settings
-BG_BRIGHTNESS_THRESHOLD = 240
-BG_FILL_PERCENTAGE = 15.0
-FLOOD_FILL_TOLERANCE = 50
 
 # Soft pastel colors for placeholder backgrounds
 PASTEL_COLORS = [
@@ -105,84 +115,10 @@ def generate_placeholder_image(word: dict[str, str], output_path: Path) -> None:
     img.save(str(output_path), "WEBP", quality=85)
 
 
-def build_prompt(english_word: str) -> str:
+def build_prompt(english_word: str, variant: str = DEFAULT_VARIANT) -> str:
     """Build the image generation prompt for a word."""
-    return PROMPT_TEMPLATE.format(word=english_word)
-
-
-def has_background(
-    img: Image.Image, threshold: int = BG_BRIGHTNESS_THRESHOLD
-) -> tuple[bool, float]:
-    """Detect if image has significant filled areas or background.
-
-    Returns (has_background, filled_percentage).
-    """
-    gray = img.convert("L")
-    pixels = np.array(gray)
-    filled_pixels = int(np.sum(pixels < threshold))
-    total_pixels = pixels.size
-    filled_pct = (filled_pixels / total_pixels) * 100.0
-    return filled_pct > BG_FILL_PERCENTAGE, filled_pct
-
-
-def remove_background(img: Image.Image, tolerance: int = FLOOD_FILL_TOLERANCE) -> Image.Image:
-    """Remove background using flood fill from borders.
-
-    Only removes pixels connected to the border, preserving the interior subject.
-    Ported from ESL's image_gen.py.
-    """
-    rgb = img.convert("RGB")
-    img_array = np.array(rgb).astype(np.float32)
-    height, width = img_array.shape[:2]
-
-    visited = np.zeros((height, width), dtype=bool)
-    mask = np.zeros((height, width), dtype=bool)
-
-    # Collect seed points from borders
-    border_w = max(int(width * 0.05), 5)
-    border_h = max(int(height * 0.05), 5)
-
-    seeds: list[tuple[int, int]] = []
-    for x in range(0, width, 5):
-        for y in range(border_h):
-            seeds.append((y, x))
-            seeds.append((height - 1 - y, x))
-    for y in range(border_h, height - border_h, 5):
-        for x_off in range(border_w):
-            seeds.append((y, x_off))
-            seeds.append((y, width - 1 - x_off))
-
-    # Flood fill from each seed using BFS
-    for seed_y, seed_x in seeds:
-        if visited[seed_y, seed_x]:
-            continue
-
-        seed_color = img_array[seed_y, seed_x]
-        queue: deque[tuple[int, int]] = deque()
-        queue.append((seed_y, seed_x))
-        visited[seed_y, seed_x] = True
-
-        while queue:
-            cy, cx = queue.popleft()
-            mask[cy, cx] = True
-
-            for dy, dx in ((0, 1), (0, -1), (1, 0), (-1, 0)):
-                ny, nx = cy + dy, cx + dx
-                if ny < 0 or ny >= height or nx < 0 or nx >= width:
-                    continue
-                if visited[ny, nx]:
-                    continue
-
-                pixel_color = img_array[ny, nx]
-                color_dist = float(np.sqrt(np.sum((pixel_color - seed_color) ** 2)))
-                if color_dist <= tolerance:
-                    queue.append((ny, nx))
-                    visited[ny, nx] = True
-
-    # Make background pixels white
-    result = np.array(img_array, dtype=np.uint8)
-    result[mask] = [255, 255, 255]
-    return Image.fromarray(result, mode="RGB")
+    template = PROMPT_VARIANTS[variant]
+    return template.format(word=english_word)
 
 
 def ensure_dimensions(img: Image.Image, size: int = IMAGE_SIZE) -> Image.Image:
@@ -208,8 +144,14 @@ def ensure_dimensions(img: Image.Image, size: int = IMAGE_SIZE) -> Image.Image:
     return result
 
 
-def generate_api_image(word: dict[str, str], output_path: Path, *, force: bool = False) -> bool:
-    """Generate image via Replicate API with background removal.
+def generate_api_image(
+    word: dict[str, str],
+    output_path: Path,
+    *,
+    force: bool = False,
+    variant: str = DEFAULT_VARIANT,
+) -> bool:
+    """Generate image via Replicate API.
 
     Returns True if image was generated, False if failed (placeholder will be used).
     """
@@ -220,7 +162,7 @@ def generate_api_image(word: dict[str, str], output_path: Path, *, force: bool =
         print("    ERROR: REPLICATE_API_TOKEN env var not set", file=sys.stderr)
         return False
 
-    prompt = build_prompt(word["english"])
+    prompt = build_prompt(word["english"], variant=variant)
 
     # Save prompt sidecar
     prompt_path = output_path.with_suffix(".prompt.txt")
@@ -247,13 +189,8 @@ def generate_api_image(word: dict[str, str], output_path: Path, *, force: bool =
         raw_bytes = results[0].read()
         img = Image.open(io.BytesIO(raw_bytes)).convert("RGB")
 
-        # Background removal
-        has_bg, fill_pct = has_background(img)
-        if has_bg:
-            print(f"    Background detected ({fill_pct:.1f}% filled), cleaning...")
-            img = remove_background(img)
-        else:
-            print(f"    Clean background ({fill_pct:.1f}% filled)")
+        # Background removal disabled — the lineart model already produces
+        # clean backgrounds and removal was degrading image quality.
 
         # Ensure dimensions
         img = ensure_dimensions(img)
@@ -367,6 +304,12 @@ def main() -> None:
     parser.add_argument(
         "--review", action="store_true", help="Generate HTML review page after images"
     )
+    parser.add_argument(
+        "--variant",
+        choices=list(PROMPT_VARIANTS.keys()),
+        default=DEFAULT_VARIANT,
+        help=f"Prompt variant (default: {DEFAULT_VARIANT})",
+    )
     args = parser.parse_args()
 
     # Read week JSON
@@ -421,7 +364,7 @@ def main() -> None:
                 skipped += 1
                 continue
 
-            success = generate_api_image(word, output_path, force=args.force)
+            success = generate_api_image(word, output_path, force=args.force, variant=args.variant)
             if success:
                 generated += 1
             else:

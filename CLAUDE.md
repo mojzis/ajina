@@ -4,24 +4,6 @@ A static flashcard web app for people with mental disabilities learning English.
 Each week, a teacher provides Czech–English word pairs. A Python build pipeline
 turns them into a self-contained static site deployed on GitHub Pages.
 
-## Autonomous Build Mode
-
-When the user says **"go"**, **"continue"**, or **"next phase"**:
-1. Check the **Build Progress** section below for incomplete phases (`[ ]`)
-2. For each incomplete phase, launch a **subagent** (Agent tool) that:
-   - Reads the phase's prompt file for detailed instructions
-   - Reads `plans/PROJECT.md` for full context
-   - Reads `CLAUDE.md` for conventions and dev commands
-   - Executes the phase fully
-   - Runs `poe check` — fixes any issues until it passes clean
-   - Commits: `git add -A && git commit -m "feat: phase N - description"`
-3. After the subagent completes, update Build Progress below (mark as `[x]`)
-4. Immediately launch the next incomplete phase — do NOT stop between phases
-5. Continue until all phases are complete
-
-Each phase runs in its own subagent to keep context fresh. Phases run
-sequentially (each builds on the previous one's output).
-
 ## Architecture
 
 - **Frontend:** Vanilla HTML/CSS/JS (no framework) — static site on GitHub Pages
@@ -83,11 +65,3 @@ All commands accept multiple symbols — batch to save tool calls.
 Run `tyf <cmd> --help` for options.
 
 Use grep for: string literals, config values, TODOs, non-Python files.
-
-## Build Progress
-
-- [x] Phase 1 — Project Setup (plans/PROMPT-01-setup.md)
-- [x] Phase 2 — Frontend Template (plans/PROMPT-02-frontend.md)
-- [x] Phase 3 — Build Pipeline (plans/PROMPT-03-build-pipeline.md)
-- [x] Phase 4 — Image Generation (plans/PROMPT-04-image-generation.md)
-- [x] Phase 5 — Polish & Deploy (plans/PROMPT-05-polish-deploy.md)
