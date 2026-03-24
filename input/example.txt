@@ -1,3 +1,14 @@
+# Format: czech, english, pronunciation, image_prompt (optional)
+#
+# image_prompt is a scene description for the image model.
+# Leave it empty for concrete nouns (cat, tree, coffee) — the model handles those fine.
+# Add it for abstract words, greetings, and phrases where the model needs guidance.
+#
+# Examples:
+#   kočka, cat, ket
+#   dobrý den, good morning, gud morning, a person stretching in bed as warm sunlight streams through the window
+#   díky, thank you, tenk jů, two people facing each other — one handing a gift the other is receiving with a smile
+
 kočka, cat, ket
 pes, dog, dog
 ryba, fish, fiš

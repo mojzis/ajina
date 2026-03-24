@@ -30,7 +30,8 @@ def parse_line(line: str) -> dict[str, str] | None:
     if not line or line.startswith("#"):
         return None
 
-    parts = [p.strip() for p in line.split(",")]
+    # Split on at most 3 commas so the 4th field (image_prompt) may contain commas
+    parts = [p.strip() for p in line.split(",", 3)]
     if len(parts) < 2:
         print(f"  Skipping malformed line: {line!r}", file=sys.stderr)
         return None
@@ -38,6 +39,7 @@ def parse_line(line: str) -> dict[str, str] | None:
     czech = parts[0]
     english = parts[1]
     pronunciation = parts[2] if len(parts) >= 3 else ""
+    image_prompt = parts[3] if len(parts) >= 4 else ""
     word_id = slugify(english)
 
     return {
@@ -45,6 +47,7 @@ def parse_line(line: str) -> dict[str, str] | None:
         "czech": czech,
         "english": english,
         "pronunciation": pronunciation,
+        "image_prompt": image_prompt,
         "image": f"{word_id}-{''.join(random.choices(string.ascii_lowercase, k=6))}.webp",
         "audio_cs": f"{word_id}_cs.mp3",
         "audio_en": f"{word_id}_en.mp3",
