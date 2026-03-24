@@ -2,7 +2,7 @@
 
 Supports two modes:
 - placeholder (default): generates simple pastel placeholder images as WebP
-- api: uses Replicate API with SDXL-lineart model (same as ../esl)
+- api: uses Replicate API with Google Imagen 3 model
 
 Also supports:
 - --review: generates an HTML review page showing all images in a grid
@@ -52,20 +52,9 @@ PROMPT_VARIANTS: dict[str, str] = {
 
 DEFAULT_VARIANT = "atlas"
 
-NEGATIVE_PROMPT = (
-    "text, words, letters, labels, captions, watermark, signature, "
-    "multiple subjects, busy background, photorealistic, 3d render, "
-    "abstract, blurry, duplicate, several animals, crowd"
-)
-
-# Replicate model config (same as ESL)
-REPLICATE_MODEL = (
-    "cuuupid/sdxl-lineart:832244dd34fc61d4938103f1723db31a1c601bacd9b203858d4b4ab6399fa0f4"
-)
+# Replicate model config
+REPLICATE_MODEL = "google/imagen-3"
 IMAGE_SIZE = 512
-INFERENCE_STEPS = 20
-GUIDANCE_SCALE = 9
-SCHEDULER = "K_EULER"
 
 # Soft pastel colors for placeholder backgrounds
 PASTEL_COLORS = [
@@ -174,19 +163,14 @@ def generate_api_image(
             REPLICATE_MODEL,
             input={
                 "prompt": prompt,
-                "negative_prompt": NEGATIVE_PROMPT,
-                "width": IMAGE_SIZE,
-                "height": IMAGE_SIZE,
-                "num_inference_steps": INFERENCE_STEPS,
-                "guidance_scale": GUIDANCE_SCALE,
-                "scheduler": SCHEDULER,
-                "num_outputs": 1,
+                "aspect_ratio": "1:1",
+                "output_format": "png",
+                "safety_filter_level": "block_medium_and_above",
             },
         )
 
-        # Read the generated image (output is an iterator)
-        results = list(output)
-        raw_bytes = results[0].read()
+        # Imagen 3 returns a single FileOutput object
+        raw_bytes = output.read()
         img = Image.open(io.BytesIO(raw_bytes)).convert("RGB")
 
         # Background removal disabled — the lineart model already produces
