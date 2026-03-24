@@ -1,6 +1,13 @@
 {
-  "current_week": "2026-W13",
+  "current_week": "2026-W14",
   "weeks": [
+    {
+      "week_id": "2026-W14",
+      "title": "Pozdravy a věci",
+      "title_en": "Greetings and Things",
+      "published": "2026-03-24",
+      "word_count": 25
+    },
     {
       "week_id": "2026-W13",
       "title": "Zvířata",

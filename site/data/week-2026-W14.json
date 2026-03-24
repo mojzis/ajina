@@ -1,0 +1,233 @@
+{
+  "week_id": "2026-W14",
+  "title": "Pozdravy a věci",
+  "title_en": "Greetings and Things",
+  "published": "2026-03-24",
+  "words": [
+    {
+      "id": "hello",
+      "czech": "dobrý den",
+      "english": "hello",
+      "pronunciation": "helou",
+      "image": "hello.webp",
+      "audio_cs": "hello_cs.mp3",
+      "audio_en": "hello_en.mp3"
+    },
+    {
+      "id": "hi",
+      "czech": "ahoj",
+      "english": "hi",
+      "pronunciation": "haj",
+      "image": "hi.webp",
+      "audio_cs": "hi_cs.mp3",
+      "audio_en": "hi_en.mp3"
+    },
+    {
+      "id": "goodbye",
+      "czech": "nashledanou",
+      "english": "goodbye",
+      "pronunciation": "gudbaj",
+      "image": "goodbye.webp",
+      "audio_cs": "goodbye_cs.mp3",
+      "audio_en": "goodbye_en.mp3"
+    },
+    {
+      "id": "good",
+      "czech": "dobrý",
+      "english": "good",
+      "pronunciation": "gud",
+      "image": "good.webp",
+      "audio_cs": "good_cs.mp3",
+      "audio_en": "good_en.mp3"
+    },
+    {
+      "id": "morning",
+      "czech": "ráno",
+      "english": "morning",
+      "pronunciation": "mórning",
+      "image": "morning.webp",
+      "audio_cs": "morning_cs.mp3",
+      "audio_en": "morning_en.mp3"
+    },
+    {
+      "id": "afternoon",
+      "czech": "odpoledne",
+      "english": "afternoon",
+      "pronunciation": "áftrnún",
+      "image": "afternoon.webp",
+      "audio_cs": "afternoon_cs.mp3",
+      "audio_en": "afternoon_en.mp3"
+    },
+    {
+      "id": "evening",
+      "czech": "večer",
+      "english": "evening",
+      "pronunciation": "ívning",
+      "image": "evening.webp",
+      "audio_cs": "evening_cs.mp3",
+      "audio_en": "evening_en.mp3"
+    },
+    {
+      "id": "night",
+      "czech": "noc",
+      "english": "night",
+      "pronunciation": "najt",
+      "image": "night.webp",
+      "audio_cs": "night_cs.mp3",
+      "audio_en": "night_en.mp3"
+    },
+    {
+      "id": "thank-you",
+      "czech": "děkuji",
+      "english": "thank you",
+      "pronunciation": "senk jú",
+      "image": "thank-you.webp",
+      "audio_cs": "thank-you_cs.mp3",
+      "audio_en": "thank-you_en.mp3"
+    },
+    {
+      "id": "thirty",
+      "czech": "třicet",
+      "english": "thirty",
+      "pronunciation": "sérty",
+      "image": "thirty.webp",
+      "audio_cs": "thirty_cs.mp3",
+      "audio_en": "thirty_en.mp3"
+    },
+    {
+      "id": "forty",
+      "czech": "čtyřicet",
+      "english": "forty",
+      "pronunciation": "fórty",
+      "image": "forty.webp",
+      "audio_cs": "forty_cs.mp3",
+      "audio_en": "forty_en.mp3"
+    },
+    {
+      "id": "tea",
+      "czech": "čaj",
+      "english": "tea",
+      "pronunciation": "tý",
+      "image": "tea.webp",
+      "audio_cs": "tea_cs.mp3",
+      "audio_en": "tea_en.mp3"
+    },
+    {
+      "id": "coffee",
+      "czech": "káva",
+      "english": "coffee",
+      "pronunciation": "kofy",
+      "image": "coffee.webp",
+      "audio_cs": "coffee_cs.mp3",
+      "audio_en": "coffee_en.mp3"
+    },
+    {
+      "id": "privacy",
+      "czech": "soukromí",
+      "english": "privacy",
+      "pronunciation": "prajvesy",
+      "image": "privacy.webp",
+      "audio_cs": "privacy_cs.mp3",
+      "audio_en": "privacy_en.mp3"
+    },
+    {
+      "id": "need",
+      "czech": "potřebuji",
+      "english": "need",
+      "pronunciation": "nýd",
+      "image": "need.webp",
+      "audio_cs": "need_cs.mp3",
+      "audio_en": "need_en.mp3"
+    },
+    {
+      "id": "lord-of-the-rings",
+      "czech": "pán prstenů",
+      "english": "lord of the rings",
+      "pronunciation": "lórd of de rings",
+      "image": "lord-of-the-rings.webp",
+      "audio_cs": "lord-of-the-rings_cs.mp3",
+      "audio_en": "lord-of-the-rings_en.mp3"
+    },
+    {
+      "id": "ring",
+      "czech": "prsten",
+      "english": "ring",
+      "pronunciation": "ring",
+      "image": "ring.webp",
+      "audio_cs": "ring_cs.mp3",
+      "audio_en": "ring_en.mp3"
+    },
+    {
+      "id": "necklace",
+      "czech": "náhrdelník",
+      "english": "necklace",
+      "pronunciation": "nekles",
+      "image": "necklace.webp",
+      "audio_cs": "necklace_cs.mp3",
+      "audio_en": "necklace_en.mp3"
+    },
+    {
+      "id": "neck",
+      "czech": "krk",
+      "english": "neck",
+      "pronunciation": "nek",
+      "image": "neck.webp",
+      "audio_cs": "neck_cs.mp3",
+      "audio_en": "neck_en.mp3"
+    },
+    {
+      "id": "earrings",
+      "czech": "náušnice",
+      "english": "earrings",
+      "pronunciation": "írings",
+      "image": "earrings.webp",
+      "audio_cs": "earrings_cs.mp3",
+      "audio_en": "earrings_en.mp3"
+    },
+    {
+      "id": "ear",
+      "czech": "ucho",
+      "english": "ear",
+      "pronunciation": "ír",
+      "image": "ear.webp",
+      "audio_cs": "ear_cs.mp3",
+      "audio_en": "ear_en.mp3"
+    },
+    {
+      "id": "watches",
+      "czech": "hodinky",
+      "english": "watches",
+      "pronunciation": "wočes",
+      "image": "watches.webp",
+      "audio_cs": "watches_cs.mp3",
+      "audio_en": "watches_en.mp3"
+    },
+    {
+      "id": "bracelet",
+      "czech": "náramek",
+      "english": "bracelet",
+      "pronunciation": "brejslet",
+      "image": "bracelet.webp",
+      "audio_cs": "bracelet_cs.mp3",
+      "audio_en": "bracelet_en.mp3"
+    },
+    {
+      "id": "sweetheart",
+      "czech": "zlato",
+      "english": "sweetheart",
+      "pronunciation": "svíthárt",
+      "image": "sweetheart.webp",
+      "audio_cs": "sweetheart_cs.mp3",
+      "audio_en": "sweetheart_en.mp3"
+    },
+    {
+      "id": "heart",
+      "czech": "srdce",
+      "english": "heart",
+      "pronunciation": "hárt",
+      "image": "heart.webp",
+      "audio_cs": "heart_cs.mp3",
+      "audio_en": "heart_en.mp3"
+    }
+  ]
+}
