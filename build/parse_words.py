@@ -6,7 +6,9 @@ and produces a week JSON file + updates the index.
 
 import argparse
 import json
+import random
 import re
+import string
 import sys
 from datetime import date
 from pathlib import Path
@@ -43,7 +45,7 @@ def parse_line(line: str) -> dict[str, str] | None:
         "czech": czech,
         "english": english,
         "pronunciation": pronunciation,
-        "image": f"{word_id}.webp",
+        "image": f"{word_id}-{''.join(random.choices(string.ascii_lowercase, k=6))}.webp",
         "audio_cs": f"{word_id}_cs.mp3",
         "audio_en": f"{word_id}_en.mp3",
     }

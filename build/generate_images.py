@@ -30,20 +30,20 @@ load_dotenv(PROJECT_ROOT / ".env")
 
 PROMPT_VARIANTS: dict[str, str] = {
     "atlas": (
-        "A hand-drawn illustration in the style of a vintage natural history atlas.\n"
+        "A hand-drawn illustration representing the concept of '{word}'.\n"
         "Black ink contours with soft watercolor fills in warm, natural colors.\n"
-        "Clean white background. Single centered subject. No text.\n"
-        "Charming and clear, suitable for an educational card.\n"
-        "Subject: a {word}"
+        "Clean white background. Single centered subject. No text, no letters, no words.\n"
+        "Charming and clear, suitable for an educational flashcard.\n"
+        "The image should visually convey the meaning of '{word}' to someone learning English."
     ),
     "kawaii": (
-        "A single {word}, cute kawaii style illustration with bold black outlines.\n"
+        "A cute kawaii style illustration representing '{word}', with bold black outlines.\n"
         "Bright vivid colors, simple shapes, cheerful expression.\n"
         "Solid white background, centered, no text, no extra objects.\n"
         "Children's educational flashcard style."
     ),
     "flat": (
-        "A single {word}, modern flat vector illustration.\n"
+        "A modern flat vector illustration representing '{word}'.\n"
         "Bold geometric shapes, bright saturated colors, clean edges.\n"
         "Solid white background, centered composition, one subject only.\n"
         "No text, no shadows, no gradients. Educational poster style."
