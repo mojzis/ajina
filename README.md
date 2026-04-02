@@ -1,6 +1,6 @@
 # Slovíčka
 
-A static flashcard web app for people with mental disabilities learning English as part of a weekly course.
+A static flashcard web app for learning English as part of a weekly course.
 
 ## Setup
 

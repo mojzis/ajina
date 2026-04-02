@@ -1,6 +1,6 @@
 # Slovíčka
 
-A static flashcard web app for people with mental disabilities learning English.
+A static flashcard web app for learning English.
 Each week, a teacher provides Czech–English word pairs. A Python build pipeline
 turns them into a self-contained static site deployed on GitHub Pages.
 
