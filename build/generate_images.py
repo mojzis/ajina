@@ -104,10 +104,19 @@ def generate_placeholder_image(word: dict[str, str], output_path: Path) -> None:
     img.save(str(output_path), "WEBP", quality=85)
 
 
-def build_prompt(english_word: str, variant: str = DEFAULT_VARIANT) -> str:
-    """Build the image generation prompt for a word."""
+def build_prompt(english_word: str, variant: str = DEFAULT_VARIANT, scene: str = "") -> str:
+    """Build the image generation prompt for a word.
+
+    If scene is provided, it replaces the generic 'concept of word' opener with a
+    concrete scene description — useful for abstract words like 'good morning'.
+    """
     template = PROMPT_VARIANTS[variant]
-    return template.format(word=english_word)
+    prompt = template.format(word=english_word)
+    if scene:
+        # Insert scene on the second line, right after the opening line
+        lines = prompt.split("\n", 1)
+        prompt = lines[0] + f"\nScene to depict: {scene}" + ("\n" + lines[1] if len(lines) > 1 else "")
+    return prompt
 
 
 def ensure_dimensions(img: Image.Image, size: int = IMAGE_SIZE) -> Image.Image:
@@ -151,7 +160,7 @@ def generate_api_image(
         print("    ERROR: REPLICATE_API_TOKEN env var not set", file=sys.stderr)
         return False
 
-    prompt = build_prompt(word["english"], variant=variant)
+    prompt = build_prompt(word["english"], variant=variant, scene=word.get("image_prompt", ""))
 
     # Save prompt sidecar
     prompt_path = output_path.with_suffix(".prompt.txt")
