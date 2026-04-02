@@ -1,0 +1,196 @@
+nohup: ignoring input
+=== Generating images via API ===
+    ERROR generating 'hi': The input or output was flagged as sensitive. Please try again with different inputs. (E005) (uIJ6l3ruRD)
+[generate_images] Generating images for week 2026-W14
+  Mode: api
+  Output: /home/exedev/git/ajina/site/data/2026-W14
+  Words: 25
+    Calling Replicate API for 'hello'...
+    Saved: hello-fvpkjc.webp (43KB)
+    Calling Replicate API for 'hi'...
+    Fallback: placeholder for 'hi'
+    Calling Replicate API for 'goodbye'...
+    Saved: goodbye-tglxim.webp (58KB)
+    Calling Replicate API for 'good'...
+    Saved: good-ielufs.webp (22KB)
+    Calling Replicate API for 'morning'...
+    Saved: morning-miqbpe.webp (43KB)
+    Calling Replicate API for 'afternoon'...
+    Saved: afternoon-ckbirp.webp (73KB)
+    Calling Replicate API for 'evening'...
+    Saved: evening-mlexgc.webp (65KB)
+    Calling Replicate API for 'night'...
+    Saved: night-jagndz.webp (43KB)
+    Calling Replicate API for 'thank you'...
+    Saved: thank-you-igrsab.webp (16KB)
+    Calling Replicate API for 'thirty'...
+    Saved: thirty-jxinlz.webp (37KB)
+    Calling Replicate API for 'forty'...
+    Saved: forty-qwsflm.webp (35KB)
+    Calling Replicate API for 'tea'...
+    Saved: tea-vswdpk.webp (50KB)
+    Calling Replicate API for 'coffee'...
+    Saved: coffee-xvpzjf.webp (35KB)
+    Calling Replicate API for 'privacy'...
+    Saved: privacy-sptzbq.webp (18KB)
+    Calling Replicate API for 'need'...
+    Saved: need-zagvno.webp (18KB)
+    Calling Replicate API for 'lord of the rings'...
+    Saved: lord-of-the-rings-fsskag.webp (62KB)
+    Calling Replicate API for 'ring'...
+    Saved: ring-rhofej.webp (31KB)
+    Calling Replicate API for 'necklace'...
+    Saved: necklace-jilvla.webp (15KB)
+    Calling Replicate API for 'neck'...
+    Saved: neck-fiedep.webp (28KB)
+    Calling Replicate API for 'earrings'...
+    Saved: earrings-dtxtlh.webp (23KB)
+    Calling Replicate API for 'ear'...
+    Saved: ear-fiigvz.webp (24KB)
+    Calling Replicate API for 'watches'...
+    Saved: watches-gyhxrf.webp (25KB)
+    Calling Replicate API for 'bracelet'...
+    Saved: bracelet-auhooi.webp (36KB)
+    Calling Replicate API for 'sweetheart'...
+    Saved: sweetheart-mijudd.webp (25KB)
+    Calling Replicate API for 'heart'...
+    Saved: heart-pwwdmi.webp (61KB)
+  Done: 25 generated, 0 skipped
+  WARNING: 1 words need real images: hi
+  Review page: /home/exedev/git/ajina/site/data/2026-W14/review.html
+=== Rebuilding site ===
+[parse_words] Parsing input/week-2026-W14.txt
+  Week: 2026-W14
+  Title: Zvířata / Animals
+  Parsed 25 words:
+    dobrý den -> hello [helou]
+    ahoj -> hi [haj]
+    nashledanou -> goodbye [gudbaj]
+    dobrý -> good [gud]
+    ráno -> morning [mórning]
+    odpoledne -> afternoon [áftrnún]
+    večer -> evening [ívning]
+    noc -> night [najt]
+    děkuji -> thank you [senk jú]
+    třicet -> thirty [sérty]
+    čtyřicet -> forty [fórty]
+    čaj -> tea [tý]
+    káva -> coffee [kofy]
+    soukromí -> privacy [prajvesy]
+    potřebuji -> need [nýd]
+    pán prstenů -> lord of the rings [lórd of de rings]
+    prsten -> ring [ring]
+    náhrdelník -> necklace [nekles]
+    krk -> neck [nek]
+    náušnice -> earrings [írings]
+    ucho -> ear [ír]
+    hodinky -> watches [wočes]
+    náramek -> bracelet [brejslet]
+    zlato -> sweetheart [svíthárt]
+    srdce -> heart [hárt]
+  Wrote week data: /home/exedev/git/ajina/site/data/week-2026-W14.json
+  Updated index: /home/exedev/git/ajina/site/data/index.json
+[generate_images] Generating images for week 2026-W14
+  Mode: placeholder
+  Output: /home/exedev/git/ajina/site/data/2026-W14
+  Words: 25
+    hello: placeholder generated
+    hi: placeholder generated
+    goodbye: placeholder generated
+    good: placeholder generated
+    morning: placeholder generated
+    afternoon: placeholder generated
+    evening: placeholder generated
+    night: placeholder generated
+    thank you: placeholder generated
+    thirty: placeholder generated
+    forty: placeholder generated
+    tea: placeholder generated
+    coffee: placeholder generated
+    privacy: placeholder generated
+    need: placeholder generated
+    lord of the rings: placeholder generated
+    ring: placeholder generated
+    necklace: placeholder generated
+    neck: placeholder generated
+    earrings: placeholder generated
+    ear: placeholder generated
+    watches: placeholder generated
+    bracelet: placeholder generated
+    sweetheart: placeholder generated
+    heart: placeholder generated
+  Done: 25 generated, 0 skipped
+[generate_audio] Generating audio for week 2026-W14
+  Czech voice: cs-CZ-VlastaNeural
+  English voice: en-GB-SoniaNeural
+  Output: /home/exedev/git/ajina/site/data/2026-W14
+  Words: 25
+  Done: 0 words generated, 25 skipped (already exist)
+[build_site] Assembling site
+  Templates: /home/exedev/git/ajina/templates
+  Output: /home/exedev/git/ajina/site
+  Copied index.html
+  Copied style.css
+  Copied app.js
+
+  Asset report:
+    Complete: 30 words
+      2026-W14/hello
+      2026-W14/hi
+      2026-W14/goodbye
+      2026-W14/good
+      2026-W14/morning
+      2026-W14/afternoon
+      2026-W14/evening
+      2026-W14/night
+      2026-W14/thank you
+      2026-W14/thirty
+      2026-W14/forty
+      2026-W14/tea
+      2026-W14/coffee
+      2026-W14/privacy
+      2026-W14/need
+      2026-W14/lord of the rings
+      2026-W14/ring
+      2026-W14/necklace
+      2026-W14/neck
+      2026-W14/earrings
+      2026-W14/ear
+      2026-W14/watches
+      2026-W14/bracelet
+      2026-W14/sweetheart
+      2026-W14/heart
+      2026-W13/cat
+      2026-W13/dog
+      2026-W13/bird
+      2026-W13/fish
+      2026-W13/horse
+    Missing: 0 items
+
+  Site assembled at: /home/exedev/git/ajina/site
+
+============================================================
+  Parse words
+============================================================
+
+
+============================================================
+  Generate images
+============================================================
+
+
+============================================================
+  Generate audio
+============================================================
+
+
+============================================================
+  Build site
+============================================================
+
+
+============================================================
+  Done! Open site/index.html to preview.
+============================================================
+
+=== Committing and pushing ===

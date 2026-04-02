@@ -1,15 +1,16 @@
 {
   "week_id": "2026-W14",
-  "title": "Pozdravy a věci",
-  "title_en": "Greetings and Things",
-  "published": "2026-03-24",
+  "title": "Zvířata",
+  "title_en": "Animals",
+  "published": "2026-04-02",
   "words": [
     {
       "id": "hello",
       "czech": "dobrý den",
       "english": "hello",
       "pronunciation": "helou",
-      "image": "hello-iwuksh.webp",
+      "image_prompt": "two people meeting on a sunny street waving and smiling at each other",
+      "image": "hello-wlvjre.webp",
       "audio_cs": "hello_cs.mp3",
       "audio_en": "hello_en.mp3"
     },
@@ -18,7 +19,8 @@
       "czech": "ahoj",
       "english": "hi",
       "pronunciation": "haj",
-      "image": "hi-etukhe.webp",
+      "image_prompt": "a child waving cheerfully with a big smile",
+      "image": "hi-btpola.webp",
       "audio_cs": "hi_cs.mp3",
       "audio_en": "hi_en.mp3"
     },
@@ -27,7 +29,8 @@
       "czech": "nashledanou",
       "english": "goodbye",
       "pronunciation": "gudbaj",
-      "image": "goodbye-utrmmq.webp",
+      "image_prompt": "two friends waving goodbye at a train station platform one boarding the train",
+      "image": "goodbye-hobolw.webp",
       "audio_cs": "goodbye_cs.mp3",
       "audio_en": "goodbye_en.mp3"
     },
@@ -36,7 +39,8 @@
       "czech": "dobrý",
       "english": "good",
       "pronunciation": "gud",
-      "image": "good-govual.webp",
+      "image_prompt": "a hand giving a thumbs-up gesture",
+      "image": "good-mkyukk.webp",
       "audio_cs": "good_cs.mp3",
       "audio_en": "good_en.mp3"
     },
@@ -45,7 +49,8 @@
       "czech": "ráno",
       "english": "morning",
       "pronunciation": "mórning",
-      "image": "morning-mmznqv.webp",
+      "image_prompt": "a person stretching in bed as warm golden sunlight streams through a window",
+      "image": "morning-gybotf.webp",
       "audio_cs": "morning_cs.mp3",
       "audio_en": "morning_en.mp3"
     },
@@ -54,7 +59,8 @@
       "czech": "odpoledne",
       "english": "afternoon",
       "pronunciation": "áftrnún",
-      "image": "afternoon-mduliy.webp",
+      "image_prompt": "a bright sunny park scene with long shadows and a clock tower showing 3 o'clock",
+      "image": "afternoon-ltxohs.webp",
       "audio_cs": "afternoon_cs.mp3",
       "audio_en": "afternoon_en.mp3"
     },
@@ -63,7 +69,8 @@
       "czech": "večer",
       "english": "evening",
       "pronunciation": "ívning",
-      "image": "evening-vmevyd.webp",
+      "image_prompt": "a cozy window view of an orange sunset sky with a warm lamp glowing inside",
+      "image": "evening-yeluie.webp",
       "audio_cs": "evening_cs.mp3",
       "audio_en": "evening_en.mp3"
     },
@@ -72,7 +79,8 @@
       "czech": "noc",
       "english": "night",
       "pronunciation": "najt",
-      "image": "night-mpviad.webp",
+      "image_prompt": "a dark sky full of stars with a crescent moon over sleeping rooftops",
+      "image": "night-qkksoh.webp",
       "audio_cs": "night_cs.mp3",
       "audio_en": "night_en.mp3"
     },
@@ -81,7 +89,8 @@
       "czech": "děkuji",
       "english": "thank you",
       "pronunciation": "senk jú",
-      "image": "thank-you-hfxqzn.webp",
+      "image_prompt": "two people facing each other one handing a small gift the other receiving it with a grateful smile",
+      "image": "thank-you-gzrckm.webp",
       "audio_cs": "thank-you_cs.mp3",
       "audio_en": "thank-you_en.mp3"
     },
@@ -90,7 +99,8 @@
       "czech": "třicet",
       "english": "thirty",
       "pronunciation": "sérty",
-      "image": "thirty-rimuiv.webp",
+      "image_prompt": "the number 30 written large on a chalkboard with small chalk drawings around it",
+      "image": "thirty-vmsybs.webp",
       "audio_cs": "thirty_cs.mp3",
       "audio_en": "thirty_en.mp3"
     },
@@ -99,7 +109,8 @@
       "czech": "čtyřicet",
       "english": "forty",
       "pronunciation": "fórty",
-      "image": "forty-xmgmiw.webp",
+      "image_prompt": "the number 40 written large on a chalkboard with small chalk drawings around it",
+      "image": "forty-vrhhgr.webp",
       "audio_cs": "forty_cs.mp3",
       "audio_en": "forty_en.mp3"
     },
@@ -108,7 +119,8 @@
       "czech": "čaj",
       "english": "tea",
       "pronunciation": "tý",
-      "image": "tea-ouqhmk.webp",
+      "image_prompt": "",
+      "image": "tea-mbnpqt.webp",
       "audio_cs": "tea_cs.mp3",
       "audio_en": "tea_en.mp3"
     },
@@ -117,7 +129,8 @@
       "czech": "káva",
       "english": "coffee",
       "pronunciation": "kofy",
-      "image": "coffee-cufrdo.webp",
+      "image_prompt": "",
+      "image": "coffee-msxwpn.webp",
       "audio_cs": "coffee_cs.mp3",
       "audio_en": "coffee_en.mp3"
     },
@@ -126,7 +139,8 @@
       "czech": "soukromí",
       "english": "privacy",
       "pronunciation": "prajvesy",
-      "image": "privacy-wqkgfl.webp",
+      "image_prompt": "a person behind a closed door with a do not disturb sign peeking through a keyhole",
+      "image": "privacy-zwpzph.webp",
       "audio_cs": "privacy_cs.mp3",
       "audio_en": "privacy_en.mp3"
     },
@@ -135,7 +149,8 @@
       "czech": "potřebuji",
       "english": "need",
       "pronunciation": "nýd",
-      "image": "need-gnazeb.webp",
+      "image_prompt": "a person in a desert reaching toward a glass of water on a table",
+      "image": "need-pzkdfx.webp",
       "audio_cs": "need_cs.mp3",
       "audio_en": "need_en.mp3"
     },
@@ -144,7 +159,8 @@
       "czech": "pán prstenů",
       "english": "lord of the rings",
       "pronunciation": "lórd of de rings",
-      "image": "lord-of-the-rings-spcmct.webp",
+      "image_prompt": "a glowing golden ring on a dark background with fiery ancient runes inscribed inside it",
+      "image": "lord-of-the-rings-nuyxbi.webp",
       "audio_cs": "lord-of-the-rings_cs.mp3",
       "audio_en": "lord-of-the-rings_en.mp3"
     },
@@ -153,7 +169,8 @@
       "czech": "prsten",
       "english": "ring",
       "pronunciation": "ring",
-      "image": "ring-instti.webp",
+      "image_prompt": "",
+      "image": "ring-lwzaru.webp",
       "audio_cs": "ring_cs.mp3",
       "audio_en": "ring_en.mp3"
     },
@@ -162,7 +179,8 @@
       "czech": "náhrdelník",
       "english": "necklace",
       "pronunciation": "nekles",
-      "image": "necklace-grdbkf.webp",
+      "image_prompt": "",
+      "image": "necklace-kxdjec.webp",
       "audio_cs": "necklace_cs.mp3",
       "audio_en": "necklace_en.mp3"
     },
@@ -171,7 +189,8 @@
       "czech": "krk",
       "english": "neck",
       "pronunciation": "nek",
-      "image": "neck-bhrthz.webp",
+      "image_prompt": "",
+      "image": "neck-riipsz.webp",
       "audio_cs": "neck_cs.mp3",
       "audio_en": "neck_en.mp3"
     },
@@ -180,7 +199,8 @@
       "czech": "náušnice",
       "english": "earrings",
       "pronunciation": "írings",
-      "image": "earrings-ethprv.webp",
+      "image_prompt": "",
+      "image": "earrings-fdmooq.webp",
       "audio_cs": "earrings_cs.mp3",
       "audio_en": "earrings_en.mp3"
     },
@@ -189,7 +209,8 @@
       "czech": "ucho",
       "english": "ear",
       "pronunciation": "ír",
-      "image": "ear-imjils.webp",
+      "image_prompt": "",
+      "image": "ear-ufyiff.webp",
       "audio_cs": "ear_cs.mp3",
       "audio_en": "ear_en.mp3"
     },
@@ -198,7 +219,8 @@
       "czech": "hodinky",
       "english": "watches",
       "pronunciation": "wočes",
-      "image": "watches-gtdbdv.webp",
+      "image_prompt": "",
+      "image": "watches-bvjkid.webp",
       "audio_cs": "watches_cs.mp3",
       "audio_en": "watches_en.mp3"
     },
@@ -207,7 +229,8 @@
       "czech": "náramek",
       "english": "bracelet",
       "pronunciation": "brejslet",
-      "image": "bracelet-zymdtp.webp",
+      "image_prompt": "",
+      "image": "bracelet-xydlag.webp",
       "audio_cs": "bracelet_cs.mp3",
       "audio_en": "bracelet_en.mp3"
     },
@@ -216,7 +239,8 @@
       "czech": "zlato",
       "english": "sweetheart",
       "pronunciation": "svíthárt",
-      "image": "sweetheart-xefnoc.webp",
+      "image_prompt": "two people holding hands with small hearts floating around them",
+      "image": "sweetheart-cilrhw.webp",
       "audio_cs": "sweetheart_cs.mp3",
       "audio_en": "sweetheart_en.mp3"
     },
@@ -225,7 +249,8 @@
       "czech": "srdce",
       "english": "heart",
       "pronunciation": "hárt",
-      "image": "heart-ehxgoc.webp",
+      "image_prompt": "",
+      "image": "heart-wfddxi.webp",
       "audio_cs": "heart_cs.mp3",
       "audio_en": "heart_en.mp3"
     }

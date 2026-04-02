@@ -1,19 +1,19 @@
-dobrý den, hello, helou
-ahoj, hi, haj
-nashledanou, goodbye, gudbaj
-dobrý, good, gud
-ráno, morning, mórning
-odpoledne, afternoon, áftrnún
-večer, evening, ívning
-noc, night, najt
-děkuji, thank you, senk jú
-třicet, thirty, sérty
-čtyřicet, forty, fórty
+dobrý den, hello, helou, two people meeting on a sunny street waving and smiling at each other
+ahoj, hi, haj, a child waving cheerfully with a big smile
+nashledanou, goodbye, gudbaj, two friends waving goodbye at a train station platform one boarding the train
+dobrý, good, gud, a hand giving a thumbs-up gesture
+ráno, morning, mórning, a person stretching in bed as warm golden sunlight streams through a window
+odpoledne, afternoon, áftrnún, a bright sunny park scene with long shadows and a clock tower showing 3 o'clock
+večer, evening, ívning, a cozy window view of an orange sunset sky with a warm lamp glowing inside
+noc, night, najt, a dark sky full of stars with a crescent moon over sleeping rooftops
+děkuji, thank you, senk jú, two people facing each other one handing a small gift the other receiving it with a grateful smile
+třicet, thirty, sérty, the number 30 written large on a chalkboard with small chalk drawings around it
+čtyřicet, forty, fórty, the number 40 written large on a chalkboard with small chalk drawings around it
 čaj, tea, tý
 káva, coffee, kofy
-soukromí, privacy, prajvesy
-potřebuji, need, nýd
-pán prstenů, lord of the rings, lórd of de rings
+soukromí, privacy, prajvesy, a person behind a closed door with a do not disturb sign peeking through a keyhole
+potřebuji, need, nýd, a person in a desert reaching toward a glass of water on a table
+pán prstenů, lord of the rings, lórd of de rings, a glowing golden ring on a dark background with fiery ancient runes inscribed inside it
 prsten, ring, ring
 náhrdelník, necklace, nekles
 krk, neck, nek
@@ -21,5 +21,5 @@ náušnice, earrings, írings
 ucho, ear, ír
 hodinky, watches, wočes
 náramek, bracelet, brejslet
-zlato, sweetheart, svíthárt
+zlato, sweetheart, svíthárt, two people holding hands with small hearts floating around them
 srdce, heart, hárt

@@ -19,6 +19,7 @@ import io
 import json
 import os
 import sys
+import time
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -358,6 +359,7 @@ def main() -> None:
                 continue
 
             success = generate_api_image(word, output_path, force=args.force, variant=args.variant)
+            time.sleep(11)  # Rate limit: max 6 requests/minute
             if success:
                 generated += 1
             else:
