@@ -43,6 +43,17 @@ uv run python build/build_all.py \
   --input input/week-2026-W14.txt
 ```
 
+## Image Generation Notes
+
+Imagen 3 gotchas, learned the hard way:
+
+- **Never use `child`/`children`/`kids`/`kawaii`** in templates or `image_prompt`s — the safety filter trips even on benign uses. Say `people`, `friends`, `person`.
+- **Never put the target word in `image_prompt`** — the model renders it as hand-lettered text instead of depicting it. Describe the scene only.
+- **Use concrete scenes** for abstract words (`two friends greeting on a sidewalk`, `a hand giving a thumbs-up`); the template handles the word reference.
+- **Be explicit about colors** — "warm, natural" → brown sepia. The `merry` variant lists colors (sky blue, sunny yellow, fresh green, coral pink) for vivid output.
+- **Test prompt changes via `generate_preview.py`** (strict abort). The production `generate_images.py` silently falls back to placeholders, only surfacing in a `WARNING:` summary.
+- **`parse_words.py` reuses existing image filenames** via `preserve_existing_images()` — don't bypass it, or the random-suffix reshuffle orphans every previously generated webp.
+
 ## Conventions
 
 - `pathlib.Path` everywhere, no string concatenation for paths

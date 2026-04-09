@@ -37,21 +37,17 @@ PROMPT_VARIANTS: dict[str, str] = {
         "Charming and clear, suitable for an educational flashcard.\n"
         "The image should visually convey the meaning of '{word}' to someone learning English."
     ),
-    "kawaii": (
-        "A cute kawaii style illustration representing '{word}', with bold black outlines.\n"
-        "Bright vivid colors, simple shapes, cheerful expression.\n"
-        "Solid white background, centered, no text, no extra objects.\n"
-        "Children's educational flashcard style."
-    ),
-    "flat": (
-        "A modern flat vector illustration representing '{word}'.\n"
-        "Bold geometric shapes, bright saturated colors, clean edges.\n"
-        "Solid white background, centered composition, one subject only.\n"
-        "No text, no shadows, no gradients. Educational poster style."
+    "merry": (
+        "A hand-drawn illustration representing the concept of '{word}'.\n"
+        "Bold ink lines with bright cheerful watercolor fills:\n"
+        "vivid playful colors — sky blue, sunny yellow, fresh green, coral pink, soft lavender.\n"
+        "Clean white background. Single centered subject. No text, no letters, no words.\n"
+        "Joyful, lively and clear, suitable for an educational flashcard.\n"
+        "The image should visually convey the meaning of '{word}' to someone learning English."
     ),
 }
 
-DEFAULT_VARIANT = "atlas"
+DEFAULT_VARIANT = "merry"
 
 # Replicate model config
 REPLICATE_MODEL = "google/imagen-3"
@@ -108,15 +104,18 @@ def generate_placeholder_image(word: dict[str, str], output_path: Path) -> None:
 def build_prompt(english_word: str, variant: str = DEFAULT_VARIANT, scene: str = "") -> str:
     """Build the image generation prompt for a word.
 
-    If scene is provided, it replaces the generic 'concept of word' opener with a
-    concrete scene description — useful for abstract words like 'good morning'.
+    Formats the variant template with the english word, then optionally
+    splices in `Scene to depict: ...` after the opening line. The scene
+    framing turns abstract words into concrete depictions, which the model
+    handles much better than the bare word alone.
     """
     template = PROMPT_VARIANTS[variant]
     prompt = template.format(word=english_word)
     if scene:
         # Insert scene on the second line, right after the opening line
         lines = prompt.split("\n", 1)
-        prompt = lines[0] + f"\nScene to depict: {scene}" + ("\n" + lines[1] if len(lines) > 1 else "")
+        tail = "\n" + lines[1] if len(lines) > 1 else ""
+        prompt = lines[0] + f"\nScene to depict: {scene}" + tail
     return prompt
 
 

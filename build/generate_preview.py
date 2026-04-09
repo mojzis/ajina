@@ -17,10 +17,13 @@ from generate_images import (
     DEFAULT_VARIANT,
     PROMPT_VARIANTS,
     generate_api_image,
-    generate_placeholder_image,
 )
+from PIL import Image
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+THUMB_SIZE = 192
+THUMB_SUFFIX = ".thumb.webp"
 
 load_dotenv(PROJECT_ROOT / ".env")
 
@@ -57,18 +60,50 @@ def generate_preview(week_id: str, *, force: bool = False) -> Path:
 
             success = generate_api_image(word, output_path, force=force, variant=variant)
             if not success:
-                generate_placeholder_image(word, output_path)
-                print(f"  {word['english']} ({variant}): placeholder fallback")
+                print(
+                    f"  ABORT: '{word['english']}' ({variant}) failed — "
+                    "likely safety filter or API error. Stopping preview run.",
+                    file=sys.stderr,
+                )
+                sys.exit(2)
+            _make_thumbnail(output_path)
+
+    # Ensure thumbnails exist for any cached images too
+    for variant in variants:
+        for word in words:
+            img_path = preview_dir / variant / word["image"]
+            if img_path.exists():
+                _make_thumbnail(img_path)
 
     # Build comparison HTML
     return _build_comparison_html(words, variants, preview_dir, week_id)
 
 
+def _thumbnail_path(img_path: Path) -> Path:
+    """Sibling thumbnail path for a given full-size image."""
+    return img_path.with_name(img_path.stem + THUMB_SUFFIX)
+
+
+def _make_thumbnail(img_path: Path) -> None:
+    """Generate a small WebP thumbnail next to the full image (idempotent)."""
+    if not img_path.exists() or img_path.name.endswith(THUMB_SUFFIX):
+        return
+    thumb_path = _thumbnail_path(img_path)
+    if thumb_path.exists() and thumb_path.stat().st_mtime >= img_path.stat().st_mtime:
+        return
+    img = Image.open(img_path).convert("RGB")
+    img.thumbnail((THUMB_SIZE, THUMB_SIZE))
+    thumb_path.parent.mkdir(parents=True, exist_ok=True)
+    img.save(str(thumb_path), "WEBP", quality=70)
+
+
 def _embed_image(img_path: Path) -> str:
-    """Return a data URI for an image, or empty string if missing."""
-    if not img_path.exists():
+    """Return a data URI for an image (prefers thumbnail), empty if missing."""
+    thumb = _thumbnail_path(img_path)
+    chosen = thumb if thumb.exists() else img_path
+    if not chosen.exists():
         return ""
-    img_data = img_path.read_bytes()
+    img_data = chosen.read_bytes()
     b64 = base64.b64encode(img_data).decode("ascii")
     return f"data:image/webp;base64,{b64}"
 
@@ -97,14 +132,18 @@ def _build_comparison_html(
             cells.append(f"""
             <td>
                 <img src="{src}" alt="{word["english"]} - {variant}" width="256" height="256">
-                <details><summary>Prompt</summary><pre>{prompt_text}</pre></details>
+                <details><summary>Full prompt sent</summary><pre>{prompt_text}</pre></details>
             </td>""")
+
+        scene = word.get("image_prompt", "")
+        scene_html = f'<div class="scene"><em>scene:</em> {scene}</div>' if scene else ""
 
         rows.append(f"""
         <tr>
             <td class="word-label">
                 <strong>{word["english"]}</strong><br>
                 <small>{word["czech"]}</small>
+                {scene_html}
             </td>
             {"".join(cells)}
         </tr>""")
@@ -150,8 +189,17 @@ td img {{
 }}
 .word-label {{
     font-size: 1.1rem;
-    min-width: 120px;
+    min-width: 180px;
+    max-width: 240px;
     background: #f8f9fa;
+    text-align: left;
+    vertical-align: top;
+}}
+.scene {{
+    margin-top: .5rem;
+    font-size: .75rem;
+    color: #555;
+    line-height: 1.3;
 }}
 details {{ margin-top: .5rem; text-align: left; }}
 pre {{

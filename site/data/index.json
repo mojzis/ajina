@@ -1,11 +1,18 @@
 {
-  "current_week": "2026-W14",
+  "current_week": "2026-W15",
   "weeks": [
+    {
+      "week_id": "2026-W15",
+      "title": "Koníčky",
+      "title_en": "Hobbies",
+      "published": "2026-04-09",
+      "word_count": 15
+    },
     {
       "week_id": "2026-W14",
       "title": "Zvířata",
       "title_en": "Animals",
-      "published": "2026-04-02",
+      "published": "2026-04-09",
       "word_count": 25
     },
     {

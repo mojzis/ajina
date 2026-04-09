@@ -1,0 +1,158 @@
+{
+  "week_id": "2026-W15",
+  "title": "Koníčky",
+  "title_en": "Hobbies",
+  "published": "2026-04-09",
+  "words": [
+    {
+      "id": "piano",
+      "czech": "Klavír",
+      "english": "piano",
+      "pronunciation": "pyenou",
+      "image_prompt": "",
+      "image": "piano-vfdpow.webp",
+      "audio_cs": "piano_cs.mp3",
+      "audio_en": "piano_en.mp3"
+    },
+    {
+      "id": "guitar",
+      "czech": "kytara",
+      "english": "guitar",
+      "pronunciation": "gitár",
+      "image_prompt": "",
+      "image": "guitar-yfydyt.webp",
+      "audio_cs": "guitar_cs.mp3",
+      "audio_en": "guitar_en.mp3"
+    },
+    {
+      "id": "swimming",
+      "czech": "plavání",
+      "english": "swimming",
+      "pronunciation": "svimink",
+      "image_prompt": "a person swimming through clear blue pool water doing a freestyle stroke",
+      "image": "swimming-udcixl.webp",
+      "audio_cs": "swimming_cs.mp3",
+      "audio_en": "swimming_en.mp3"
+    },
+    {
+      "id": "to-play",
+      "czech": "hrát",
+      "english": "to play",
+      "pronunciation": "tu plej",
+      "image_prompt": "a smiling person joyfully playing a guitar in a sunny room with music notes floating around",
+      "image": "to-play-dppijk.webp",
+      "audio_cs": "to-play_cs.mp3",
+      "audio_en": "to-play_en.mp3"
+    },
+    {
+      "id": "to-dance",
+      "czech": "tancovat",
+      "english": "to dance",
+      "pronunciation": "tu dáns",
+      "image_prompt": "two people dancing happily in a brightly lit room with music notes floating around",
+      "image": "to-dance-vdaqyu.webp",
+      "audio_cs": "to-dance_cs.mp3",
+      "audio_en": "to-dance_en.mp3"
+    },
+    {
+      "id": "english",
+      "czech": "angličtina",
+      "english": "English",
+      "pronunciation": "inglyš",
+      "image_prompt": "an open book with the British and American flags on its pages, surrounded by speech bubbles with cheerful greetings",
+      "image": "english-kpleet.webp",
+      "audio_cs": "english_cs.mp3",
+      "audio_en": "english_en.mp3"
+    },
+    {
+      "id": "to-learn",
+      "czech": "učit se",
+      "english": "to learn",
+      "pronunciation": "tu lérn",
+      "image_prompt": "an open book on a wooden desk surrounded by a glowing lightbulb, floating letters of the alphabet, and small sparkles representing a moment of understanding",
+      "image": "to-learn-jpznqx.webp",
+      "audio_cs": "to-learn_cs.mp3",
+      "audio_en": "to-learn_en.mp3"
+    },
+    {
+      "id": "to-travel",
+      "czech": "cestovat",
+      "english": "to travel",
+      "pronunciation": "tu trevl",
+      "image_prompt": "a happy traveler with a backpack and suitcase looking at a world map with an airplane and landmarks in the background",
+      "image": "to-travel-bggyso.webp",
+      "audio_cs": "to-travel_cs.mp3",
+      "audio_en": "to-travel_en.mp3"
+    },
+    {
+      "id": "to-ride-a-horse",
+      "czech": "jezdit na koni",
+      "english": "to ride a horse",
+      "pronunciation": "tu rajd e hórs",
+      "image_prompt": "a smiling rider on a brown horse galloping through a sunny meadow",
+      "image": "to-ride-a-horse-yskzwq.webp",
+      "audio_cs": "to-ride-a-horse_cs.mp3",
+      "audio_en": "to-ride-a-horse_en.mp3"
+    },
+    {
+      "id": "to-ride-a-bike",
+      "czech": "jezdit na kole",
+      "english": "to ride a bike",
+      "pronunciation": "tu rajd e bajk",
+      "image_prompt": "a cheerful person cycling along a sunny country road with hills in the background",
+      "image": "to-ride-a-bike-dfphvo.webp",
+      "audio_cs": "to-ride-a-bike_cs.mp3",
+      "audio_en": "to-ride-a-bike_en.mp3"
+    },
+    {
+      "id": "drums",
+      "czech": "bicí",
+      "english": "drums",
+      "pronunciation": "drams",
+      "image_prompt": "",
+      "image": "drums-rgfltr.webp",
+      "audio_cs": "drums_cs.mp3",
+      "audio_en": "drums_en.mp3"
+    },
+    {
+      "id": "flute",
+      "czech": "flétna",
+      "english": "flute",
+      "pronunciation": "flút",
+      "image_prompt": "",
+      "image": "flute-ekdbss.webp",
+      "audio_cs": "flute_cs.mp3",
+      "audio_en": "flute_en.mp3"
+    },
+    {
+      "id": "trumpet",
+      "czech": "trumpeta",
+      "english": "trumpet",
+      "pronunciation": "trampet",
+      "image_prompt": "",
+      "image": "trumpet-gbkqpp.webp",
+      "audio_cs": "trumpet_cs.mp3",
+      "audio_en": "trumpet_en.mp3"
+    },
+    {
+      "id": "what-are-your-hobbies",
+      "czech": "Jaké máš koníčky?",
+      "english": "what are your hobbies?",
+      "pronunciation": "vot ár jór hobys",
+      "image_prompt": "two friends chatting in a sunny park, one looking curious with a question mark above their head, surrounded by tiny icons of musical instruments and sports balls",
+      "image": "what-are-your-hobbies-uzejex.webp",
+      "audio_cs": "what-are-your-hobbies_cs.mp3",
+      "audio_en": "what-are-your-hobbies_en.mp3"
+    },
+    {
+      "id": "could-i-have-some-tea",
+      "czech": "Mohl bych si dát čaj?",
+      "english": "could I have some tea?",
+      "pronunciation": "kud aj hev sam tý",
+      "image_prompt": "a polite person at a café table pointing to a cup of steaming tea, a smiling waiter beside them",
+      "image": "could-i-have-some-tea-jstdns.webp",
+      "audio_cs": "could-i-have-some-tea_cs.mp3",
+      "audio_en": "could-i-have-some-tea_en.mp3"
+    }
+  ]
+}

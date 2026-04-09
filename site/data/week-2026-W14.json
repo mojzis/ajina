@@ -2,7 +2,7 @@
   "week_id": "2026-W14",
   "title": "Zvířata",
   "title_en": "Animals",
-  "published": "2026-04-02",
+  "published": "2026-04-09",
   "words": [
     {
       "id": "hello",
@@ -10,7 +10,7 @@
       "english": "hello",
       "pronunciation": "helou",
       "image_prompt": "two people meeting on a sunny street waving and smiling at each other",
-      "image": "hello-wlvjre.webp",
+      "image": "hello-fvpkjc.webp",
       "audio_cs": "hello_cs.mp3",
       "audio_en": "hello_en.mp3"
     },
@@ -19,8 +19,8 @@
       "czech": "ahoj",
       "english": "hi",
       "pronunciation": "haj",
-      "image_prompt": "a child waving cheerfully with a big smile",
-      "image": "hi-btpola.webp",
+      "image_prompt": "two friends greeting each other on a sidewalk, one raising a hand in a friendly wave",
+      "image": "hi-etukhe.webp",
       "audio_cs": "hi_cs.mp3",
       "audio_en": "hi_en.mp3"
     },
@@ -30,7 +30,7 @@
       "english": "goodbye",
       "pronunciation": "gudbaj",
       "image_prompt": "two friends waving goodbye at a train station platform one boarding the train",
-      "image": "goodbye-hobolw.webp",
+      "image": "goodbye-tglxim.webp",
       "audio_cs": "goodbye_cs.mp3",
       "audio_en": "goodbye_en.mp3"
     },
@@ -40,7 +40,7 @@
       "english": "good",
       "pronunciation": "gud",
       "image_prompt": "a hand giving a thumbs-up gesture",
-      "image": "good-mkyukk.webp",
+      "image": "good-govual.webp",
       "audio_cs": "good_cs.mp3",
       "audio_en": "good_en.mp3"
     },
@@ -50,7 +50,7 @@
       "english": "morning",
       "pronunciation": "mórning",
       "image_prompt": "a person stretching in bed as warm golden sunlight streams through a window",
-      "image": "morning-gybotf.webp",
+      "image": "morning-miqbpe.webp",
       "audio_cs": "morning_cs.mp3",
       "audio_en": "morning_en.mp3"
     },
@@ -60,7 +60,7 @@
       "english": "afternoon",
       "pronunciation": "áftrnún",
       "image_prompt": "a bright sunny park scene with long shadows and a clock tower showing 3 o'clock",
-      "image": "afternoon-ltxohs.webp",
+      "image": "afternoon-ckbirp.webp",
       "audio_cs": "afternoon_cs.mp3",
       "audio_en": "afternoon_en.mp3"
     },
@@ -70,7 +70,7 @@
       "english": "evening",
       "pronunciation": "ívning",
       "image_prompt": "a cozy window view of an orange sunset sky with a warm lamp glowing inside",
-      "image": "evening-yeluie.webp",
+      "image": "evening-mlexgc.webp",
       "audio_cs": "evening_cs.mp3",
       "audio_en": "evening_en.mp3"
     },
@@ -80,7 +80,7 @@
       "english": "night",
       "pronunciation": "najt",
       "image_prompt": "a dark sky full of stars with a crescent moon over sleeping rooftops",
-      "image": "night-qkksoh.webp",
+      "image": "night-jagndz.webp",
       "audio_cs": "night_cs.mp3",
       "audio_en": "night_en.mp3"
     },
@@ -89,8 +89,8 @@
       "czech": "děkuji",
       "english": "thank you",
       "pronunciation": "senk jú",
-      "image_prompt": "two people facing each other one handing a small gift the other receiving it with a grateful smile",
-      "image": "thank-you-gzrckm.webp",
+      "image_prompt": "two friends smiling as one offers a small wrapped present to the other in a sunny park",
+      "image": "thank-you-hfxqzn.webp",
       "audio_cs": "thank-you_cs.mp3",
       "audio_en": "thank-you_en.mp3"
     },
@@ -100,7 +100,7 @@
       "english": "thirty",
       "pronunciation": "sérty",
       "image_prompt": "the number 30 written large on a chalkboard with small chalk drawings around it",
-      "image": "thirty-vmsybs.webp",
+      "image": "thirty-jxinlz.webp",
       "audio_cs": "thirty_cs.mp3",
       "audio_en": "thirty_en.mp3"
     },
@@ -110,7 +110,7 @@
       "english": "forty",
       "pronunciation": "fórty",
       "image_prompt": "the number 40 written large on a chalkboard with small chalk drawings around it",
-      "image": "forty-vrhhgr.webp",
+      "image": "forty-qwsflm.webp",
       "audio_cs": "forty_cs.mp3",
       "audio_en": "forty_en.mp3"
     },
@@ -120,7 +120,7 @@
       "english": "tea",
       "pronunciation": "tý",
       "image_prompt": "",
-      "image": "tea-mbnpqt.webp",
+      "image": "tea-ouqhmk.webp",
       "audio_cs": "tea_cs.mp3",
       "audio_en": "tea_en.mp3"
     },
@@ -130,7 +130,7 @@
       "english": "coffee",
       "pronunciation": "kofy",
       "image_prompt": "",
-      "image": "coffee-msxwpn.webp",
+      "image": "coffee-cufrdo.webp",
       "audio_cs": "coffee_cs.mp3",
       "audio_en": "coffee_en.mp3"
     },
@@ -140,7 +140,7 @@
       "english": "privacy",
       "pronunciation": "prajvesy",
       "image_prompt": "a person behind a closed door with a do not disturb sign peeking through a keyhole",
-      "image": "privacy-zwpzph.webp",
+      "image": "privacy-wqkgfl.webp",
       "audio_cs": "privacy_cs.mp3",
       "audio_en": "privacy_en.mp3"
     },
@@ -150,7 +150,7 @@
       "english": "need",
       "pronunciation": "nýd",
       "image_prompt": "a person in a desert reaching toward a glass of water on a table",
-      "image": "need-pzkdfx.webp",
+      "image": "need-gnazeb.webp",
       "audio_cs": "need_cs.mp3",
       "audio_en": "need_en.mp3"
     },
@@ -160,7 +160,7 @@
       "english": "lord of the rings",
       "pronunciation": "lórd of de rings",
       "image_prompt": "a glowing golden ring on a dark background with fiery ancient runes inscribed inside it",
-      "image": "lord-of-the-rings-nuyxbi.webp",
+      "image": "lord-of-the-rings-fsskag.webp",
       "audio_cs": "lord-of-the-rings_cs.mp3",
       "audio_en": "lord-of-the-rings_en.mp3"
     },
@@ -170,7 +170,7 @@
       "english": "ring",
       "pronunciation": "ring",
       "image_prompt": "",
-      "image": "ring-lwzaru.webp",
+      "image": "ring-rhofej.webp",
       "audio_cs": "ring_cs.mp3",
       "audio_en": "ring_en.mp3"
     },
@@ -180,7 +180,7 @@
       "english": "necklace",
       "pronunciation": "nekles",
       "image_prompt": "",
-      "image": "necklace-kxdjec.webp",
+      "image": "necklace-grdbkf.webp",
       "audio_cs": "necklace_cs.mp3",
       "audio_en": "necklace_en.mp3"
     },
@@ -190,7 +190,7 @@
       "english": "neck",
       "pronunciation": "nek",
       "image_prompt": "",
-      "image": "neck-riipsz.webp",
+      "image": "neck-fiedep.webp",
       "audio_cs": "neck_cs.mp3",
       "audio_en": "neck_en.mp3"
     },
@@ -200,7 +200,7 @@
       "english": "earrings",
       "pronunciation": "írings",
       "image_prompt": "",
-      "image": "earrings-fdmooq.webp",
+      "image": "earrings-ethprv.webp",
       "audio_cs": "earrings_cs.mp3",
       "audio_en": "earrings_en.mp3"
     },
@@ -210,7 +210,7 @@
       "english": "ear",
       "pronunciation": "ír",
       "image_prompt": "",
-      "image": "ear-ufyiff.webp",
+      "image": "ear-imjils.webp",
       "audio_cs": "ear_cs.mp3",
       "audio_en": "ear_en.mp3"
     },
@@ -220,7 +220,7 @@
       "english": "watches",
       "pronunciation": "wočes",
       "image_prompt": "",
-      "image": "watches-bvjkid.webp",
+      "image": "watches-gyhxrf.webp",
       "audio_cs": "watches_cs.mp3",
       "audio_en": "watches_en.mp3"
     },
@@ -230,7 +230,7 @@
       "english": "bracelet",
       "pronunciation": "brejslet",
       "image_prompt": "",
-      "image": "bracelet-xydlag.webp",
+      "image": "bracelet-auhooi.webp",
       "audio_cs": "bracelet_cs.mp3",
       "audio_en": "bracelet_en.mp3"
     },
@@ -240,7 +240,7 @@
       "english": "sweetheart",
       "pronunciation": "svíthárt",
       "image_prompt": "two people holding hands with small hearts floating around them",
-      "image": "sweetheart-cilrhw.webp",
+      "image": "sweetheart-xefnoc.webp",
       "audio_cs": "sweetheart_cs.mp3",
       "audio_en": "sweetheart_en.mp3"
     },
@@ -250,7 +250,7 @@
       "english": "heart",
       "pronunciation": "hárt",
       "image_prompt": "",
-      "image": "heart-wfddxi.webp",
+      "image": "heart-pwwdmi.webp",
       "audio_cs": "heart_cs.mp3",
       "audio_en": "heart_en.mp3"
     }
