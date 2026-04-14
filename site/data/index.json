@@ -1,6 +1,13 @@
 {
-  "current_week": "2026-W15",
+  "current_week": "2026-W13",
   "weeks": [
+    {
+      "week_id": "2026-W16",
+      "title": "V restauraci",
+      "title_en": "At the Restaurant",
+      "published": "2026-04-14",
+      "word_count": 12
+    },
     {
       "week_id": "2026-W15",
       "title": "Koníčky",
@@ -10,16 +17,16 @@
     },
     {
       "week_id": "2026-W14",
-      "title": "Zvířata",
-      "title_en": "Animals",
-      "published": "2026-04-09",
+      "title": "Pozdravy",
+      "title_en": "Greetings",
+      "published": "2026-04-14",
       "word_count": 25
     },
     {
       "week_id": "2026-W13",
       "title": "Zvířata",
       "title_en": "Animals",
-      "published": "2026-03-22",
+      "published": "2026-04-14",
       "word_count": 5
     }
   ]

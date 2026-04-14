@@ -8,7 +8,7 @@ turns them into a self-contained static site deployed on GitHub Pages.
 
 - **Frontend:** Vanilla HTML/CSS/JS (no framework) — static site on GitHub Pages
 - **Build pipeline:** Python scripts in `build/` — parse words, generate images, generate audio, assemble site
-- **Image generation:** Replicate API with SDXL-lineart model (reused from `../esl`)
+- **Image generation:** Replicate API with Google Imagen 3 model
 - **Audio:** edge-tts (pre-generated MP3s)
 - **Sibling project:** `../esl` has shared patterns — image generation, caching, project setup
 

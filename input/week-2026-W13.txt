@@ -1,5 +1,5 @@
 kočka, cat, ket
 pes, dog, dog
-pták, bird, bérd
-ryba, fish, fiš
-kůň, horse, hórs
+pták, bird, bérd, a tiny songbird sitting on a tree branch in a garden with lots of space around it showing the complete bird with beak and tail feathers
+ryba, fish, fiš, a small goldfish in a round fishbowl with water and pebbles showing the complete fish with mouth and all fins
+kůň, horse, hórs, a small cute pony standing in a green meadow seen from a distance showing the whole animal

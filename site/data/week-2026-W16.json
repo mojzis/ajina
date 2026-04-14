@@ -1,0 +1,128 @@
+{
+  "week_id": "2026-W16",
+  "title": "V restauraci",
+  "title_en": "At the Restaurant",
+  "published": "2026-04-14",
+  "words": [
+    {
+      "id": "can-i-order-please",
+      "czech": "Mohu si prosím objednat?",
+      "english": "can I order please?",
+      "pronunciation": "ken aj ódر plíz",
+      "image_prompt": "a person sitting at a restaurant table with an open menu looking up and waving politely at a passing waiter",
+      "image": "can-i-order-please-yphxbr.webp",
+      "audio_cs": "can-i-order-please_cs.mp3",
+      "audio_en": "can-i-order-please_en.mp3"
+    },
+    {
+      "id": "pasta-with-cheese-sauce",
+      "czech": "těstoviny se sýrovou omáčkou",
+      "english": "pasta with cheese sauce",
+      "pronunciation": "pasta viz číz sós",
+      "image_prompt": "a plate of creamy pasta covered in melted golden cheese sauce on a wooden table",
+      "image": "pasta-with-cheese-sauce-lstymc.webp",
+      "audio_cs": "pasta-with-cheese-sauce_cs.mp3",
+      "audio_en": "pasta-with-cheese-sauce_en.mp3"
+    },
+    {
+      "id": "pizza",
+      "czech": "pizza",
+      "english": "pizza",
+      "pronunciation": "píca",
+      "image_prompt": "",
+      "image": "pizza-qoygqv.webp",
+      "audio_cs": "pizza_cs.mp3",
+      "audio_en": "pizza_en.mp3"
+    },
+    {
+      "id": "chinese-food",
+      "czech": "čína",
+      "english": "Chinese food",
+      "pronunciation": "čajníz fúd",
+      "image_prompt": "a table full of colorful Chinese takeout boxes with noodles and rice and chopsticks",
+      "image": "chinese-food-ojcddm.webp",
+      "audio_cs": "chinese-food_cs.mp3",
+      "audio_en": "chinese-food_en.mp3"
+    },
+    {
+      "id": "vegetable-salad",
+      "czech": "zeleninový salát",
+      "english": "vegetable salad",
+      "pronunciation": "vedžtebl salad",
+      "image_prompt": "a fresh bowl of colorful mixed vegetable salad with lettuce tomatoes cucumbers and peppers",
+      "image": "vegetable-salad-kocukp.webp",
+      "audio_cs": "vegetable-salad_cs.mp3",
+      "audio_en": "vegetable-salad_en.mp3"
+    },
+    {
+      "id": "spaghetti",
+      "czech": "špagety",
+      "english": "spaghetti",
+      "pronunciation": "spagety",
+      "image_prompt": "",
+      "image": "spaghetti-hzkuwg.webp",
+      "audio_cs": "spaghetti_cs.mp3",
+      "audio_en": "spaghetti_en.mp3"
+    },
+    {
+      "id": "sauce",
+      "czech": "omáčka",
+      "english": "sauce",
+      "pronunciation": "sós",
+      "image_prompt": "a small bowl of rich red tomato sauce with a spoon beside it",
+      "image": "sauce-jkggcg.webp",
+      "audio_cs": "sauce_cs.mp3",
+      "audio_en": "sauce_en.mp3"
+    },
+    {
+      "id": "water",
+      "czech": "voda",
+      "english": "water",
+      "pronunciation": "vótr",
+      "image_prompt": "",
+      "image": "water-lflbpp.webp",
+      "audio_cs": "water_cs.mp3",
+      "audio_en": "water_en.mp3"
+    },
+    {
+      "id": "beer",
+      "czech": "pivo",
+      "english": "beer",
+      "pronunciation": "bír",
+      "image_prompt": "a tall glass of golden beer with foam on top on a bar counter",
+      "image": "beer-dkxxft.webp",
+      "audio_cs": "beer_cs.mp3",
+      "audio_en": "beer_en.mp3"
+    },
+    {
+      "id": "juice",
+      "czech": "džus",
+      "english": "juice",
+      "pronunciation": "džús",
+      "image_prompt": "a glass of fresh orange juice with an orange slice on the rim",
+      "image": "juice-fdutas.webp",
+      "audio_cs": "juice_cs.mp3",
+      "audio_en": "juice_en.mp3"
+    },
+    {
+      "id": "wine",
+      "czech": "víno",
+      "english": "wine",
+      "pronunciation": "vajn",
+      "image_prompt": "a glass of red wine next to a wine bottle on an elegant table",
+      "image": "wine-xrgrcd.webp",
+      "audio_cs": "wine_cs.mp3",
+      "audio_en": "wine_en.mp3"
+    },
+    {
+      "id": "lemonade",
+      "czech": "limonáda",
+      "english": "lemonade",
+      "pronunciation": "lemonejd",
+      "image_prompt": "a tall glass of sparkling lemonade with ice cubes and a lemon slice",
+      "image": "lemonade-nobasi.webp",
+      "audio_cs": "lemonade_cs.mp3",
+      "audio_en": "lemonade_en.mp3"
+    }
+  ]
+}

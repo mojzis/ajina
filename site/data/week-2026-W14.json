@@ -1,8 +1,8 @@
 {
   "week_id": "2026-W14",
-  "title": "Zvířata",
-  "title_en": "Animals",
-  "published": "2026-04-09",
+  "title": "Pozdravy",
+  "title_en": "Greetings",
+  "published": "2026-04-14",
   "words": [
     {
       "id": "hello",
@@ -19,7 +19,7 @@
       "czech": "ahoj",
       "english": "hi",
       "pronunciation": "haj",
-      "image_prompt": "two friends greeting each other on a sidewalk, one raising a hand in a friendly wave",
+      "image_prompt": "a child waving cheerfully with a big smile",
       "image": "hi-etukhe.webp",
       "audio_cs": "hi_cs.mp3",
       "audio_en": "hi_en.mp3"
@@ -89,7 +89,7 @@
       "czech": "děkuji",
       "english": "thank you",
       "pronunciation": "senk jú",
-      "image_prompt": "two friends smiling as one offers a small wrapped present to the other in a sunny park",
+      "image_prompt": "two people facing each other one handing a small gift the other receiving it with a grateful smile",
       "image": "thank-you-hfxqzn.webp",
       "audio_cs": "thank-you_cs.mp3",
       "audio_en": "thank-you_en.mp3"

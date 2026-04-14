@@ -2,13 +2,14 @@
   "week_id": "2026-W13",
   "title": "Zvířata",
   "title_en": "Animals",
-  "published": "2026-03-22",
+  "published": "2026-04-14",
   "words": [
     {
       "id": "cat",
       "czech": "kočka",
       "english": "cat",
       "pronunciation": "ket",
+      "image_prompt": "",
       "image": "cat.webp",
       "audio_cs": "cat_cs.mp3",
       "audio_en": "cat_en.mp3"
@@ -18,6 +19,7 @@
       "czech": "pes",
       "english": "dog",
       "pronunciation": "dog",
+      "image_prompt": "",
       "image": "dog.webp",
       "audio_cs": "dog_cs.mp3",
       "audio_en": "dog_en.mp3"
@@ -27,6 +29,7 @@
       "czech": "pták",
       "english": "bird",
       "pronunciation": "bérd",
+      "image_prompt": "a tiny songbird sitting on a tree branch in a garden with lots of space around it showing the complete bird with beak and tail feathers",
       "image": "bird.webp",
       "audio_cs": "bird_cs.mp3",
       "audio_en": "bird_en.mp3"
@@ -36,6 +39,7 @@
       "czech": "ryba",
       "english": "fish",
       "pronunciation": "fiš",
+      "image_prompt": "a small goldfish in a round fishbowl with water and pebbles showing the complete fish with mouth and all fins",
       "image": "fish.webp",
       "audio_cs": "fish_cs.mp3",
       "audio_en": "fish_en.mp3"
@@ -45,6 +49,7 @@
       "czech": "kůň",
       "english": "horse",
       "pronunciation": "hórs",
+      "image_prompt": "a small cute pony standing in a green meadow seen from a distance showing the whole animal",
       "image": "horse.webp",
       "audio_cs": "horse_cs.mp3",
       "audio_en": "horse_en.mp3"
