@@ -1,6 +1,13 @@
 {
-  "current_week": "2026-W13",
+  "current_week": "2026-W17",
   "weeks": [
+    {
+      "week_id": "2026-W17",
+      "title": "Rodina a barvy",
+      "title_en": "Family and Colours",
+      "published": "2026-04-26",
+      "word_count": 19
+    },
     {
       "week_id": "2026-W16",
       "title": "V restauraci",

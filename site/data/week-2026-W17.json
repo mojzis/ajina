@@ -1,0 +1,198 @@
+{
+  "week_id": "2026-W17",
+  "title": "Rodina a barvy",
+  "title_en": "Family and Colours",
+  "published": "2026-04-26",
+  "words": [
+    {
+      "id": "dad",
+      "czech": "táta",
+      "english": "dad",
+      "pronunciation": "ded",
+      "image_prompt": "a man relaxing on a couch in a cozy living room holding a coffee mug with a warm smile",
+      "image": "dad-ivrbxl.webp",
+      "audio_cs": "dad_cs.mp3",
+      "audio_en": "dad_en.mp3"
+    },
+    {
+      "id": "mum",
+      "czech": "máma",
+      "english": "mum",
+      "pronunciation": "mam",
+      "image_prompt": "a brave woman in a helmet paddling a whitewater kayak through splashing rapids with a big grin",
+      "image": "mum-mnguwj.webp",
+      "audio_cs": "mum_cs.mp3",
+      "audio_en": "mum_en.mp3"
+    },
+    {
+      "id": "niece",
+      "czech": "neteř",
+      "english": "niece",
+      "pronunciation": "nýs",
+      "image_prompt": "a young woman receiving a wrapped birthday present from an older relative in a festive room",
+      "image": "niece-zjzzua.webp",
+      "audio_cs": "niece_cs.mp3",
+      "audio_en": "niece_en.mp3"
+    },
+    {
+      "id": "nephew",
+      "czech": "synovec",
+      "english": "nephew",
+      "pronunciation": "nefjú",
+      "image_prompt": "a young man playing catch with a ball in a sunny backyard with an older relative",
+      "image": "nephew-sllamp.webp",
+      "audio_cs": "nephew_cs.mp3",
+      "audio_en": "nephew_en.mp3"
+    },
+    {
+      "id": "brother",
+      "czech": "bratr",
+      "english": "brother",
+      "pronunciation": "bradhr",
+      "image_prompt": "two young men with similar features standing side by side with arms around each other shoulders laughing",
+      "image": "brother-bxprds.webp",
+      "audio_cs": "brother_cs.mp3",
+      "audio_en": "brother_en.mp3"
+    },
+    {
+      "id": "sister",
+      "czech": "sestra",
+      "english": "sister",
+      "pronunciation": "sistr",
+      "image_prompt": "two young women with similar features sitting together on a park bench sharing earbuds and smiling",
+      "image": "sister-wkxxqt.webp",
+      "audio_cs": "sister_cs.mp3",
+      "audio_en": "sister_en.mp3"
+    },
+    {
+      "id": "grandmother",
+      "czech": "babička",
+      "english": "grandmother",
+      "pronunciation": "grendmadhr",
+      "image_prompt": "an elderly woman with white hair and glasses knitting in a rocking chair by a fireplace",
+      "image": "grandmother-oczoor.webp",
+      "audio_cs": "grandmother_cs.mp3",
+      "audio_en": "grandmother_en.mp3"
+    },
+    {
+      "id": "grandfather",
+      "czech": "děda",
+      "english": "grandfather",
+      "pronunciation": "grendfádhr",
+      "image_prompt": "an elderly man with a warm smile sitting on a porch in a wooden chair telling a story",
+      "image": "grandfather-wmifit.webp",
+      "audio_cs": "grandfather_cs.mp3",
+      "audio_en": "grandfather_en.mp3"
+    },
+    {
+      "id": "aunt",
+      "czech": "teta",
+      "english": "aunt",
+      "pronunciation": "ánt",
+      "image_prompt": "a woman arriving at a front door carrying a casserole dish greeted with a hug",
+      "image": "aunt-lbolfh.webp",
+      "audio_cs": "aunt_cs.mp3",
+      "audio_en": "aunt_en.mp3"
+    },
+    {
+      "id": "uncle",
+      "czech": "strýc",
+      "english": "uncle",
+      "pronunciation": "ankl",
+      "image_prompt": "a man at a barbecue grill in a garden flipping burgers with tongs and an apron",
+      "image": "uncle-nqtxea.webp",
+      "audio_cs": "uncle_cs.mp3",
+      "audio_en": "uncle_en.mp3"
+    },
+    {
+      "id": "cousin",
+      "czech": "bratranec / sestřenice",
+      "english": "cousin",
+      "pronunciation": "kazn",
+      "image_prompt": "two adults of similar age laughing together at a family barbecue in a sunny garden",
+      "image": "cousin-yrzfvt.webp",
+      "audio_cs": "cousin_cs.mp3",
+      "audio_en": "cousin_en.mp3"
+    },
+    {
+      "id": "how-are-you-fine",
+      "czech": "Jak se máš? Dobře.",
+      "english": "How are you? Fine.",
+      "pronunciation": "hau ár jú? fajn.",
+      "image_prompt": "two people meeting on a street one asking a question with a speech bubble the other smiling and giving a thumbs-up",
+      "image": "how-are-you-fine-okhwqi.webp",
+      "audio_cs": "how-are-you-fine_cs.mp3",
+      "audio_en": "how-are-you-fine_en.mp3"
+    },
+    {
+      "id": "colour",
+      "czech": "barva",
+      "english": "colour",
+      "pronunciation": "kalr",
+      "image_prompt": "an artist palette full of bright paint blobs with a paintbrush resting on it",
+      "image": "colour-wuwepb.webp",
+      "audio_cs": "colour_cs.mp3",
+      "audio_en": "colour_en.mp3"
+    },
+    {
+      "id": "white",
+      "czech": "bílá",
+      "english": "white",
+      "pronunciation": "vajt",
+      "image_prompt": "a fluffy white cloud floating in a bright blue sky",
+      "image": "white-eyeysl.webp",
+      "audio_cs": "white_cs.mp3",
+      "audio_en": "white_en.mp3"
+    },
+    {
+      "id": "black",
+      "czech": "černá",
+      "english": "black",
+      "pronunciation": "blek",
+      "image_prompt": "a sleek black cat sitting elegantly on a white windowsill",
+      "image": "black-fmzvje.webp",
+      "audio_cs": "black_cs.mp3",
+      "audio_en": "black_en.mp3"
+    },
+    {
+      "id": "red",
+      "czech": "červená",
+      "english": "red",
+      "pronunciation": "red",
+      "image_prompt": "",
+      "image": "red-drpakj.webp",
+      "audio_cs": "red_cs.mp3",
+      "audio_en": "red_en.mp3"
+    },
+    {
+      "id": "blue",
+      "czech": "modrá",
+      "english": "blue",
+      "pronunciation": "blú",
+      "image_prompt": "a deep blue ocean wave curling under a clear sky",
+      "image": "blue-kkkqdw.webp",
+      "audio_cs": "blue_cs.mp3",
+      "audio_en": "blue_en.mp3"
+    },
+    {
+      "id": "orange",
+      "czech": "oranžová",
+      "english": "orange",
+      "pronunciation": "orendž",
+      "image_prompt": "",
+      "image": "orange-kibmeu.webp",
+      "audio_cs": "orange_cs.mp3",
+      "audio_en": "orange_en.mp3"
+    },
+    {
+      "id": "my-favourite-colour-is-black",
+      "czech": "Moje oblíbená barva je černá.",
+      "english": "My favourite colour is black.",
+      "pronunciation": "maj fejvrit kalr iz blek.",
+      "image_prompt": "a person wearing all dark clothes standing confidently in front of a colorful paint-splattered wall looking stylish",
+      "image": "my-favourite-colour-is-black-uiarjj.webp",
+      "audio_cs": "my-favourite-colour-is-black_cs.mp3",
+      "audio_en": "my-favourite-colour-is-black_en.mp3"
+    }
+  ]
+}
