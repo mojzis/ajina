@@ -35,13 +35,43 @@ uv add --group dev <package> # add a dev dependency
 
 ## Build Pipeline
 
+`build_all.py` defaults to `--mode placeholder` and the placeholder path is silent —
+running it without `--mode api` produces a fully assembled site of pastel placeholders
+with no warning. Forwarding `--mode api` to `build_all.py` also does **not** pass
+`--force`, so previously generated placeholders won't be overwritten.
+
+The reliable flow for a new week with real images is two steps — generate images directly,
+then run `build_all.py` to parse words, generate audio, and assemble the site:
+
 ```bash
+# 1. Real images via Replicate (loads REPLICATE_API_TOKEN from .env via dotenv).
+#    --force overwrites any earlier placeholders. Default variant is "merry".
+uv run python build/generate_images.py --week 2026-W18 --mode api --force
+
+# 2. Parse words, generate audio, assemble site (images already exist, so this step
+#    is fast and won't re-call Replicate).
 uv run python build/build_all.py \
-  --week 2026-W14 \
-  --title "Zvířata" \
-  --title-en "Animals" \
-  --input input/week-2026-W14.txt
+  --week 2026-W18 \
+  --title "Zájmena" \
+  --title-en "Pronouns" \
+  --input input/week-2026-W18.txt
 ```
+
+`generate_and_deploy.sh` is the canonical pattern — copy it for new weeks rather than
+inventing a one-off invocation.
+
+After generation, **always audit which webps are real vs placeholders**. The script
+prints `ERROR generating '<word>'` and `Fallback: placeholder for '<word>'` for every
+failure, but a long happy log can drown them. Real Imagen webps are typically 10KB+;
+placeholders are ~1KB:
+
+```bash
+# Anything under ~3KB is a placeholder fallback
+find site/data/2026-W18 -name '*.webp' -size -3k
+```
+
+Re-run failed words with `--mode api --force` after editing their `image_prompt` to
+dodge the safety filter (see Image Generation Notes below).
 
 ## Image Generation Notes
 

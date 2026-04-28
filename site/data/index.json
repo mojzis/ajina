@@ -1,6 +1,13 @@
 {
-  "current_week": "2026-W17",
+  "current_week": "2026-W18",
   "weeks": [
+    {
+      "week_id": "2026-W18",
+      "title": "Zájmena",
+      "title_en": "Pronouns",
+      "published": "2026-04-28",
+      "word_count": 15
+    },
     {
       "week_id": "2026-W17",
       "title": "Rodina a barvy",

@@ -1,0 +1,158 @@
+{
+  "week_id": "2026-W18",
+  "title": "Zájmena",
+  "title_en": "Pronouns",
+  "published": "2026-04-28",
+  "words": [
+    {
+      "id": "i-am",
+      "czech": "já jsem",
+      "english": "I am",
+      "pronunciation": "aj em",
+      "image_prompt": "a cheerful person painting a bright sunflower on an easel in a sunny art studio with colorful paintings on the walls",
+      "image": "i-am-iuasxn.webp",
+      "audio_cs": "i-am_cs.mp3",
+      "audio_en": "i-am_en.mp3"
+    },
+    {
+      "id": "you-are",
+      "czech": "ty jsi",
+      "english": "you are",
+      "pronunciation": "jú ár",
+      "image_prompt": "a friendly host standing at an open sunny doorway gesturing welcomingly with one hand toward the entrance to invite someone in",
+      "image": "you-are-imhuba.webp",
+      "audio_cs": "you-are_cs.mp3",
+      "audio_en": "you-are_en.mp3"
+    },
+    {
+      "id": "he-is",
+      "czech": "on je",
+      "english": "he is",
+      "pronunciation": "hí iz",
+      "image_prompt": "a smiling man standing relaxed and centered in a sunny park with hands at his sides, while a friend a few steps to the side points at him with an outstretched index finger and a cheerful smile",
+      "image": "he-is-mpztce.webp",
+      "audio_cs": "he-is_cs.mp3",
+      "audio_en": "he-is_en.mp3"
+    },
+    {
+      "id": "she-is",
+      "czech": "ona je",
+      "english": "she is",
+      "pronunciation": "ší iz",
+      "image_prompt": "a smiling woman standing relaxed and centered in a sunny garden with hands at her sides, while a friend a few steps to the side points at her with an outstretched index finger and a cheerful smile",
+      "image": "she-is-ueyuzk.webp",
+      "audio_cs": "she-is_cs.mp3",
+      "audio_en": "she-is_en.mp3"
+    },
+    {
+      "id": "we-are",
+      "czech": "my jsme",
+      "english": "we are",
+      "pronunciation": "ví ár",
+      "image_prompt": "two friends walking side by side along a sunny beach each holding an ice cream cone laughing together",
+      "image": "we-are-ixlfjn.webp",
+      "audio_cs": "we-are_cs.mp3",
+      "audio_en": "we-are_en.mp3"
+    },
+    {
+      "id": "they-are",
+      "czech": "oni jsou",
+      "english": "they are",
+      "pronunciation": "dhej ár",
+      "image_prompt": "three friends viewed from a distance playing frisbee on a sunny park lawn under a bright sky",
+      "image": "they-are-jzagrh.webp",
+      "audio_cs": "they-are_cs.mp3",
+      "audio_en": "they-are_en.mp3"
+    },
+    {
+      "id": "to-run",
+      "czech": "běhat",
+      "english": "to run",
+      "pronunciation": "tu ran",
+      "image_prompt": "a person jogging through a sunny park with arms swinging mid-stride and a determined happy expression",
+      "image": "to-run-yosgqp.webp",
+      "audio_cs": "to-run_cs.mp3",
+      "audio_en": "to-run_en.mp3"
+    },
+    {
+      "id": "church",
+      "czech": "kostel",
+      "english": "church",
+      "pronunciation": "čerč",
+      "image_prompt": "",
+      "image": "church-hobmns.webp",
+      "audio_cs": "church_cs.mp3",
+      "audio_en": "church_en.mp3"
+    },
+    {
+      "id": "closet",
+      "czech": "skříň",
+      "english": "closet",
+      "pronunciation": "klózet",
+      "image_prompt": "",
+      "image": "closet-cokwju.webp",
+      "audio_cs": "closet_cs.mp3",
+      "audio_en": "closet_en.mp3"
+    },
+    {
+      "id": "my",
+      "czech": "můj",
+      "english": "my",
+      "pronunciation": "maj",
+      "image_prompt": "a person hugging a backpack against their chest possessively with a happy smile",
+      "image": "my-geydnz.webp",
+      "audio_cs": "my_cs.mp3",
+      "audio_en": "my_en.mp3"
+    },
+    {
+      "id": "your",
+      "czech": "tvůj",
+      "english": "your",
+      "pronunciation": "jór",
+      "image_prompt": "a person handing a wrapped present to another person who is pointing at the gift with a delighted expression",
+      "image": "your-znaobt.webp",
+      "audio_cs": "your_cs.mp3",
+      "audio_en": "your_en.mp3"
+    },
+    {
+      "id": "his",
+      "czech": "jeho",
+      "english": "his",
+      "pronunciation": "hiz",
+      "image_prompt": "a man standing next to a bicycle with one hand resting on the handlebar proudly",
+      "image": "his-tpptdm.webp",
+      "audio_cs": "his_cs.mp3",
+      "audio_en": "his_en.mp3"
+    },
+    {
+      "id": "her",
+      "czech": "její",
+      "english": "her",
+      "pronunciation": "hér",
+      "image_prompt": "a woman holding up a colorful umbrella above her head on a rainy street with a smile",
+      "image": "her-vjtyof.webp",
+      "audio_cs": "her_cs.mp3",
+      "audio_en": "her_en.mp3"
+    },
+    {
+      "id": "our",
+      "czech": "náš",
+      "english": "our",
+      "pronunciation": "aur",
+      "image_prompt": "two friends in matching aprons proudly presenting a freshly baked pie they made together on a sunny kitchen counter",
+      "image": "our-kmegru.webp",
+      "audio_cs": "our_cs.mp3",
+      "audio_en": "our_en.mp3"
+    },
+    {
+      "id": "their",
+      "czech": "jejich",
+      "english": "their",
+      "pronunciation": "dhér",
+      "image_prompt": "two bicycles parked side by side leaning against a sunny garden fence with helmets hanging from the handlebars",
+      "image": "their-jqofiv.webp",
+      "audio_cs": "their_cs.mp3",
+      "audio_en": "their_en.mp3"
+    }
+  ]
+}
