@@ -1,0 +1,108 @@
+{
+  "week_id": "2026-W19",
+  "title": "Každodenní život",
+  "title_en": "Daily life",
+  "published": "2026-05-09",
+  "words": [
+    {
+      "id": "car",
+      "czech": "auto",
+      "english": "car",
+      "pronunciation": "kár",
+      "image_prompt": "a shiny red car parked at a sunny street curb with palm trees and a bright blue sky in the background",
+      "image": "car-wcthkt.webp",
+      "audio_cs": "car_cs.mp3",
+      "audio_en": "car_en.mp3"
+    },
+    {
+      "id": "book",
+      "czech": "kniha",
+      "english": "book",
+      "pronunciation": "búk",
+      "image_prompt": "an open hardcover novel resting on a wooden desk under a warm reading lamp with a steaming cup of tea beside it",
+      "image": "book-ncrehp.webp",
+      "audio_cs": "book_cs.mp3",
+      "audio_en": "book_en.mp3"
+    },
+    {
+      "id": "house",
+      "czech": "dům",
+      "english": "house",
+      "pronunciation": "haus",
+      "image_prompt": "a charming two-story home with a red roof white walls and a colorful flower garden under a bright blue sky",
+      "image": "house-hhonva.webp",
+      "audio_cs": "house_cs.mp3",
+      "audio_en": "house_en.mp3"
+    },
+    {
+      "id": "dinner",
+      "czech": "večeře",
+      "english": "dinner",
+      "pronunciation": "dynr",
+      "image_prompt": "an inviting wooden dining table set with a steaming roast chicken mashed potatoes colorful vegetables lit candles and warm bread in a cozy room",
+      "image": "dinner-pgstll.webp",
+      "audio_cs": "dinner_cs.mp3",
+      "audio_en": "dinner_en.mp3"
+    },
+    {
+      "id": "lunch",
+      "czech": "oběd",
+      "english": "lunch",
+      "pronunciation": "lanč",
+      "image_prompt": "a person sitting at a sunny outdoor cafe table eating a colorful sandwich with a side salad and a glass of lemonade",
+      "image": "lunch-aceqav.webp",
+      "audio_cs": "lunch_cs.mp3",
+      "audio_en": "lunch_en.mp3"
+    },
+    {
+      "id": "to-go-home",
+      "czech": "jít domů",
+      "english": "to go home",
+      "pronunciation": "tu gou houm",
+      "image_prompt": "a person walking up the front path toward their cozy home at sunset carrying a backpack with a relaxed happy smile",
+      "image": "to-go-home-kffcrw.webp",
+      "audio_cs": "to-go-home_cs.mp3",
+      "audio_en": "to-go-home_en.mp3"
+    },
+    {
+      "id": "to-go-to-school",
+      "czech": "jít do školy",
+      "english": "to go to school",
+      "pronunciation": "tu gou tu skúl",
+      "image_prompt": "a teenager walking along a sunny sidewalk toward a brick schoolhouse in the morning carrying a backpack and notebooks",
+      "image": "to-go-to-school-psicwm.webp",
+      "audio_cs": "to-go-to-school_cs.mp3",
+      "audio_en": "to-go-to-school_en.mp3"
+    },
+    {
+      "id": "to-go-to-work",
+      "czech": "jít do práce",
+      "english": "to go to work",
+      "pronunciation": "tu gou tu vrk",
+      "image_prompt": "a person in a smart blazer walking briskly along a sunny city sidewalk toward office buildings holding a coffee cup and a leather bag",
+      "image": "to-go-to-work-hisogu.webp",
+      "audio_cs": "to-go-to-work_cs.mp3",
+      "audio_en": "to-go-to-work_en.mp3"
+    },
+    {
+      "id": "to-go-to-sleep",
+      "czech": "jít spát",
+      "english": "to go to sleep",
+      "pronunciation": "tu gou tu slýp",
+      "image_prompt": "a person in pajamas yawning and stretching while walking toward a cozy bed with fluffy pillows in a warmly lit bedroom",
+      "image": "to-go-to-sleep-vzbext.webp",
+      "audio_cs": "to-go-to-sleep_cs.mp3",
+      "audio_en": "to-go-to-sleep_en.mp3"
+    },
+    {
+      "id": "to-have-dinner",
+      "czech": "večeřet",
+      "english": "to have dinner",
+      "pronunciation": "tu hev dynr",
+      "image_prompt": "two friends seated at a candlelit restaurant table with plates of pasta clinking glasses of red wine smiling and laughing",
+      "image": "to-have-dinner-prjgom.webp",
+      "audio_cs": "to-have-dinner_cs.mp3",
+      "audio_en": "to-have-dinner_en.mp3"
+    }
+  ]
+}

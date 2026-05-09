@@ -1,6 +1,13 @@
 {
-  "current_week": "2026-W18",
+  "current_week": "2026-W19",
   "weeks": [
+    {
+      "week_id": "2026-W19",
+      "title": "Každodenní život",
+      "title_en": "Daily life",
+      "published": "2026-05-09",
+      "word_count": 10
+    },
     {
       "week_id": "2026-W18",
       "title": "Zájmena",
