@@ -4,6 +4,9 @@ site/assets/
 # Keep data files
 !site/data/
 
+# Raw Replicate PNGs (kept locally for re-processing, not tracked)
+site/data/**/*.orig.png
+
 # Python
 __pycache__/
 *.pyc

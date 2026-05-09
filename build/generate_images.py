@@ -130,7 +130,7 @@ def ensure_dimensions(img: Image.Image, size: int = IMAGE_SIZE) -> Image.Image:
     if img.size == (size, size):
         return img
 
-    img.thumbnail((size, size), Image.LANCZOS)
+    img.thumbnail((size, size), Image.Resampling.LANCZOS)
     if img.size == (size, size):
         return img
 
@@ -179,16 +179,17 @@ def generate_api_image(
 
         # Imagen 3 returns a single FileOutput object
         raw_bytes = output.read()
+
+        # Persist the untouched API response so future post-processing changes
+        # (resize, background tweaks, etc.) don't require re-calling Replicate.
+        # Gitignored — kept locally per generator run.
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        orig_path = output_path.with_suffix(".orig.png")
+        orig_path.write_bytes(raw_bytes)
+
         img = Image.open(io.BytesIO(raw_bytes)).convert("RGB")
-
-        # Background removal disabled — the lineart model already produces
-        # clean backgrounds and removal was degrading image quality.
-
-        # Ensure dimensions
         img = ensure_dimensions(img)
 
-        # Save as WebP
-        output_path.parent.mkdir(parents=True, exist_ok=True)
         img.save(str(output_path), "WEBP", quality=85)
 
         file_size = output_path.stat().st_size
