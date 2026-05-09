@@ -33,7 +33,7 @@ PROMPT_VARIANTS: dict[str, str] = {
     "atlas": (
         "A hand-drawn illustration representing the concept of '{word}'.\n"
         "Black ink contours with soft watercolor fills in warm, natural colors.\n"
-        "Clean white background. Single centered subject. No text, no letters, no words.\n"
+        "Light clean background. The illustration fills the frame. No text, no letters, no words.\n"
         "Charming and clear, suitable for an educational flashcard.\n"
         "The image should visually convey the meaning of '{word}' to someone learning English."
     ),
@@ -41,7 +41,7 @@ PROMPT_VARIANTS: dict[str, str] = {
         "A hand-drawn illustration representing the concept of '{word}'.\n"
         "Bold ink lines with bright cheerful watercolor fills:\n"
         "vivid playful colors — sky blue, sunny yellow, fresh green, coral pink, soft lavender.\n"
-        "Clean white background. Single centered subject. No text, no letters, no words.\n"
+        "Light clean background. The illustration fills the frame. No text, no letters, no words.\n"
         "Joyful, lively and clear, suitable for an educational flashcard.\n"
         "The image should visually convey the meaning of '{word}' to someone learning English."
     ),
@@ -104,19 +104,16 @@ def generate_placeholder_image(word: dict[str, str], output_path: Path) -> None:
 def build_prompt(english_word: str, variant: str = DEFAULT_VARIANT, scene: str = "") -> str:
     """Build the image generation prompt for a word.
 
-    Formats the variant template with the english word, then optionally
-    splices in `Scene to depict: ...` after the opening line. The scene
-    framing turns abstract words into concrete depictions, which the model
-    handles much better than the bare word alone.
+    With a scene, drop every line that references {word} and lead with the
+    scene description — Imagen tends to hand-letter the word as visible text
+    when it appears in the prompt, even alongside "no text" instructions.
+    Without a scene, fall back to the bare-word template.
     """
     template = PROMPT_VARIANTS[variant]
-    prompt = template.format(word=english_word)
     if scene:
-        # Insert scene on the second line, right after the opening line
-        lines = prompt.split("\n", 1)
-        tail = "\n" + lines[1] if len(lines) > 1 else ""
-        prompt = lines[0] + f"\nScene to depict: {scene}" + tail
-    return prompt
+        style_lines = [line for line in template.split("\n") if "{word}" not in line]
+        return "Scene to depict: " + scene + "\n" + "\n".join(style_lines)
+    return template.format(word=english_word)
 
 
 def ensure_dimensions(img: Image.Image, size: int = IMAGE_SIZE) -> Image.Image:
