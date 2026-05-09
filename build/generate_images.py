@@ -120,24 +120,23 @@ def build_prompt(english_word: str, variant: str = DEFAULT_VARIANT, scene: str =
 
 
 def ensure_dimensions(img: Image.Image, size: int = IMAGE_SIZE) -> Image.Image:
-    """Ensure image is exactly size x size, cropping or padding as needed."""
-    w, h = img.size
-    if w == size and h == size:
+    """Ensure image is exactly size x size, resizing while preserving aspect ratio.
+
+    Imagen 3 returns ~1024x1024 with aspect_ratio="1:1"; an earlier version of
+    this function center-cropped that down, which lopped the outer half off
+    every illustration. Now we downscale with LANCZOS and only pad if the
+    input was non-square.
+    """
+    if img.size == (size, size):
         return img
 
-    # Center-crop if larger, or pad with white if smaller
+    img.thumbnail((size, size), Image.LANCZOS)
+    if img.size == (size, size):
+        return img
+
     result = Image.new("RGB", (size, size), (255, 255, 255))
-    paste_x = (size - w) // 2
-    paste_y = (size - h) // 2
-
-    if w > size or h > size:
-        # Crop from center
-        left = max(0, (w - size) // 2)
-        top = max(0, (h - size) // 2)
-        img = img.crop((left, top, left + min(w, size), top + min(h, size)))
-        paste_x = max(0, (size - img.size[0]) // 2)
-        paste_y = max(0, (size - img.size[1]) // 2)
-
+    paste_x = (size - img.size[0]) // 2
+    paste_y = (size - img.size[1]) // 2
     result.paste(img, (paste_x, paste_y))
     return result
 
