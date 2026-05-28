@@ -1,6 +1,13 @@
 {
-  "current_week": "2026-W19",
+  "current_week": "2026-W20",
   "weeks": [
+    {
+      "week_id": "2026-W20",
+      "title": "Jídlo a město",
+      "title_en": "Food and Town",
+      "published": "2026-05-28",
+      "word_count": 25
+    },
     {
       "week_id": "2026-W19",
       "title": "Každodenní život",
