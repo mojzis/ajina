@@ -1,0 +1,448 @@
+{
+  "week_id": "2026-W21",
+  "title": "Čas a cestování",
+  "title_en": "Time and Travel",
+  "published": "2026-06-04",
+  "words": [
+    {
+      "id": "monday",
+      "czech": "pondělí",
+      "english": "monday",
+      "pronunciation": "mandej",
+      "image_prompt": "a single tear-off desk calendar page glowing under warm morning light with a steaming coffee cup and a small red alarm clock on a bright blue desk",
+      "image": "monday-sucfwr.webp",
+      "audio_cs": "monday_cs.mp3",
+      "audio_en": "monday_en.mp3"
+    },
+    {
+      "id": "tuesday",
+      "czech": "úterý",
+      "english": "tuesday",
+      "pronunciation": "tjůzdej",
+      "image_prompt": "a tear-off wall calendar page in fresh green tones beside a small potted plant and a yellow pencil on a sunny white desk",
+      "image": "tuesday-zxcayn.webp",
+      "audio_cs": "tuesday_cs.mp3",
+      "audio_en": "tuesday_en.mp3"
+    },
+    {
+      "id": "wednesday",
+      "czech": "středa",
+      "english": "wednesday",
+      "pronunciation": "vensdej",
+      "image_prompt": "a tear-off calendar page in cheerful orange tones with a cup of tea and an open notebook on a sunny wooden desk",
+      "image": "wednesday-aizgpt.webp",
+      "audio_cs": "wednesday_cs.mp3",
+      "audio_en": "wednesday_en.mp3"
+    },
+    {
+      "id": "thursday",
+      "czech": "čtvrtek",
+      "english": "thursday",
+      "pronunciation": "társdej",
+      "image_prompt": "a tear-off calendar page in warm purple tones with a small stack of books and a glowing desk lamp on a bright table",
+      "image": "thursday-rkjwhd.webp",
+      "audio_cs": "thursday_cs.mp3",
+      "audio_en": "thursday_en.mp3"
+    },
+    {
+      "id": "friday",
+      "czech": "pátek",
+      "english": "friday",
+      "pronunciation": "frajdej",
+      "image_prompt": "a tear-off calendar page in bright coral pink tones with colorful confetti and a small party balloon on a sunny desk",
+      "image": "friday-zkymbd.webp",
+      "audio_cs": "friday_cs.mp3",
+      "audio_en": "friday_en.mp3"
+    },
+    {
+      "id": "saturday",
+      "czech": "sobota",
+      "english": "saturday",
+      "pronunciation": "seterdej",
+      "image_prompt": "a relaxed weekend scene of a hammock strung between two trees in a sunny green garden under a bright blue sky",
+      "image": "saturday-macmkl.webp",
+      "audio_cs": "saturday_cs.mp3",
+      "audio_en": "saturday_en.mp3"
+    },
+    {
+      "id": "sunday",
+      "czech": "neděle",
+      "english": "sunday",
+      "pronunciation": "sandej",
+      "image_prompt": "a cozy lazy breakfast table with golden pancakes a glass of orange juice and a folded newspaper bathed in warm morning sunlight",
+      "image": "sunday-zjnlgp.webp",
+      "audio_cs": "sunday_cs.mp3",
+      "audio_en": "sunday_en.mp3"
+    },
+    {
+      "id": "tomorrow",
+      "czech": "zítra",
+      "english": "tomorrow",
+      "pronunciation": "tumoro",
+      "image_prompt": "a bright signpost with a bold arrow pointing forward along a sunny path toward a glowing sunrise on the horizon under a fresh blue sky",
+      "image": "tomorrow-gbtnju.webp",
+      "audio_cs": "tomorrow_cs.mp3",
+      "audio_en": "tomorrow_en.mp3"
+    },
+    {
+      "id": "today",
+      "czech": "dnes",
+      "english": "today",
+      "pronunciation": "tudej",
+      "image_prompt": "a single calendar page circled in bold red marker standing upright on a sunny desk beside a small green plant in bright morning light",
+      "image": "today-enxpuf.webp",
+      "audio_cs": "today_cs.mp3",
+      "audio_en": "today_en.mp3"
+    },
+    {
+      "id": "yesterday",
+      "czech": "včera",
+      "english": "yesterday",
+      "pronunciation": "jesterdej",
+      "image_prompt": "a vintage sepia photograph and an old round wall clock on a warm wooden shelf in soft nostalgic golden light",
+      "image": "yesterday-gfwaoa.webp",
+      "audio_cs": "yesterday_cs.mp3",
+      "audio_en": "yesterday_en.mp3"
+    },
+    {
+      "id": "season",
+      "czech": "roční období",
+      "english": "season",
+      "pronunciation": "sízn",
+      "image_prompt": "a single leafy tree shown in four sections cycling through pink spring blossoms green summer leaves orange autumn foliage and white winter snow under a bright sky",
+      "image": "season-whioef.webp",
+      "audio_cs": "season_cs.mp3",
+      "audio_en": "season_en.mp3"
+    },
+    {
+      "id": "spring",
+      "czech": "jaro",
+      "english": "spring",
+      "pronunciation": "spring",
+      "image_prompt": "a sunny green meadow bursting with pink and yellow wildflowers and blossoming cherry trees under a bright blue sky with fluffy white clouds",
+      "image": "spring-uddbii.webp",
+      "audio_cs": "spring_cs.mp3",
+      "audio_en": "spring_en.mp3"
+    },
+    {
+      "id": "summer",
+      "czech": "léto",
+      "english": "summer",
+      "pronunciation": "samr",
+      "image_prompt": "a bright sandy beach with a colorful striped umbrella turquoise sea and a glowing golden sun in a clear blue sky",
+      "image": "summer-wdpdat.webp",
+      "audio_cs": "summer_cs.mp3",
+      "audio_en": "summer_en.mp3"
+    },
+    {
+      "id": "autumn",
+      "czech": "podzim",
+      "english": "autumn",
+      "pronunciation": "ótm",
+      "image_prompt": "a forest path covered in orange red and golden fallen leaves between trees with warm amber foliage under soft sunlight",
+      "image": "autumn-xaosje.webp",
+      "audio_cs": "autumn_cs.mp3",
+      "audio_en": "autumn_en.mp3"
+    },
+    {
+      "id": "winter",
+      "czech": "zima",
+      "english": "winter",
+      "pronunciation": "vintr",
+      "image_prompt": "a quiet snowy landscape with white snow-covered pine trees and gentle falling snowflakes under a soft pale blue sky",
+      "image": "winter-tnrycn.webp",
+      "audio_cs": "winter_cs.mp3",
+      "audio_en": "winter_en.mp3"
+    },
+    {
+      "id": "born",
+      "czech": "narodit se",
+      "english": "born",
+      "pronunciation": "born",
+      "image_prompt": "a tiny fresh green seedling sprouting from brown soil reaching toward a bright sunbeam in a sunny garden with sparkling dew drops",
+      "image": "born-mdepav.webp",
+      "audio_cs": "born_cs.mp3",
+      "audio_en": "born_en.mp3"
+    },
+    {
+      "id": "january",
+      "czech": "leden",
+      "english": "january",
+      "pronunciation": "dženjuery",
+      "image_prompt": "a snowy white winter scene with sparkling fresh snow glistening icicles and a single glowing warm lantern under a pale blue sky",
+      "image": "january-jsufpp.webp",
+      "audio_cs": "january_cs.mp3",
+      "audio_en": "january_en.mp3"
+    },
+    {
+      "id": "february",
+      "czech": "únor",
+      "english": "february",
+      "pronunciation": "februery",
+      "image_prompt": "a cozy table with red and pink heart-shaped decorations and a small bouquet of red roses on a white cloth in warm light",
+      "image": "february-qvdont.webp",
+      "audio_cs": "february_cs.mp3",
+      "audio_en": "february_en.mp3"
+    },
+    {
+      "id": "march",
+      "czech": "březen",
+      "english": "march",
+      "pronunciation": "márč",
+      "image_prompt": "a fresh green meadow with the first bright yellow daffodils and white snowdrops pushing through patches of melting snow under a bright sky",
+      "image": "march-qnkrhx.webp",
+      "audio_cs": "march_cs.mp3",
+      "audio_en": "march_en.mp3"
+    },
+    {
+      "id": "april",
+      "czech": "duben",
+      "english": "april",
+      "pronunciation": "ejpril",
+      "image_prompt": "a sunny scene of colorful spring flowers under a gentle rain shower with a bright rainbow arcing across a clear blue sky",
+      "image": "april-dbejdl.webp",
+      "audio_cs": "april_cs.mp3",
+      "audio_en": "april_en.mp3"
+    },
+    {
+      "id": "may",
+      "czech": "květen",
+      "english": "may",
+      "pronunciation": "mej",
+      "image_prompt": "a lush green orchard full of blossoming pink and white fruit trees with soft petals drifting in warm sunlight",
+      "image": "may-jfdjpq.webp",
+      "audio_cs": "may_cs.mp3",
+      "audio_en": "may_en.mp3"
+    },
+    {
+      "id": "june",
+      "czech": "červen",
+      "english": "june",
+      "pronunciation": "džún",
+      "image_prompt": "a bright sunny field of green grass dotted with red poppies and golden buttercups under a clear blue summer sky",
+      "image": "june-grtrlm.webp",
+      "audio_cs": "june_cs.mp3",
+      "audio_en": "june_en.mp3"
+    },
+    {
+      "id": "july",
+      "czech": "červenec",
+      "english": "july",
+      "pronunciation": "džulaj",
+      "image_prompt": "a vibrant beach scene with turquoise sea golden sand and a glowing hot sun high in a clear blue sky",
+      "image": "july-czzeor.webp",
+      "audio_cs": "july_cs.mp3",
+      "audio_en": "july_en.mp3"
+    },
+    {
+      "id": "august",
+      "czech": "srpen",
+      "english": "august",
+      "pronunciation": "ógst",
+      "image_prompt": "a golden wheat field ready for harvest glowing under a warm late-summer sun with a bright blue sky",
+      "image": "august-zmnxlh.webp",
+      "audio_cs": "august_cs.mp3",
+      "audio_en": "august_en.mp3"
+    },
+    {
+      "id": "september",
+      "czech": "září",
+      "english": "september",
+      "pronunciation": "septembr",
+      "image_prompt": "an orchard of ripe red apples on green leafy trees with a wooden basket of freshly picked fruit in warm sunlight",
+      "image": "september-pfqjbd.webp",
+      "audio_cs": "september_cs.mp3",
+      "audio_en": "september_en.mp3"
+    },
+    {
+      "id": "october",
+      "czech": "říjen",
+      "english": "october",
+      "pronunciation": "októbr",
+      "image_prompt": "a forest path of orange and red autumn leaves with a few carved orange pumpkins resting among the golden foliage",
+      "image": "october-cnohtr.webp",
+      "audio_cs": "october_cs.mp3",
+      "audio_en": "october_en.mp3"
+    },
+    {
+      "id": "november",
+      "czech": "listopad",
+      "english": "november",
+      "pronunciation": "novembr",
+      "image_prompt": "a misty landscape of bare brown trees with grey and brown fallen leaves and soft pale light filtering through fog",
+      "image": "november-oiszko.webp",
+      "audio_cs": "november_cs.mp3",
+      "audio_en": "november_en.mp3"
+    },
+    {
+      "id": "december",
+      "czech": "prosinec",
+      "english": "december",
+      "pronunciation": "dysembr",
+      "image_prompt": "a snowy festive scene with a decorated evergreen tree glowing with warm golden lights and red ornaments under a starry blue night sky",
+      "image": "december-ztskkw.webp",
+      "audio_cs": "december_cs.mp3",
+      "audio_en": "december_en.mp3"
+    },
+    {
+      "id": "towel",
+      "czech": "ručník",
+      "english": "towel",
+      "pronunciation": "taul",
+      "image_prompt": "a fluffy folded blue and white striped beach towel resting on golden sand beside the turquoise sea under bright sunlight",
+      "image": "towel-oqfnnc.webp",
+      "audio_cs": "towel_cs.mp3",
+      "audio_en": "towel_en.mp3"
+    },
+    {
+      "id": "backpack",
+      "czech": "batoh",
+      "english": "backpack",
+      "pronunciation": "bekpek",
+      "image_prompt": "a colorful red and blue hiking backpack standing on a sunny mountain trail with green hills and a bright blue sky behind",
+      "image": "backpack-lvqpcv.webp",
+      "audio_cs": "backpack_cs.mp3",
+      "audio_en": "backpack_en.mp3"
+    },
+    {
+      "id": "suitcase",
+      "czech": "kufr",
+      "english": "suitcase",
+      "pronunciation": "sútkejs",
+      "image_prompt": "a hard-shell teal travel suitcase standing upright with a luggage tag in a bright sunny airport hall",
+      "image": "suitcase-evqdmg.webp",
+      "audio_cs": "suitcase_cs.mp3",
+      "audio_en": "suitcase_en.mp3"
+    },
+    {
+      "id": "sunrise",
+      "czech": "východ slunce",
+      "english": "sunrise",
+      "pronunciation": "sanrajz",
+      "image_prompt": "a glowing golden sun rising over a calm turquoise sea with a warm orange and pink sky reflecting on the gentle water",
+      "image": "sunrise-rxxobb.webp",
+      "audio_cs": "sunrise_cs.mp3",
+      "audio_en": "sunrise_en.mp3"
+    },
+    {
+      "id": "sunset",
+      "czech": "západ slunce",
+      "english": "sunset",
+      "pronunciation": "sanset",
+      "image_prompt": "a vivid orange and pink sky with a glowing sun sinking below the ocean horizon casting warm light over gentle waves",
+      "image": "sunset-vddghe.webp",
+      "audio_cs": "sunset_cs.mp3",
+      "audio_en": "sunset_en.mp3"
+    },
+    {
+      "id": "flip-flops",
+      "czech": "žabky",
+      "english": "flip-flops",
+      "pronunciation": "flipflops",
+      "image_prompt": "a pair of bright blue rubber sandals resting on golden beach sand beside a few seashells under sunny light",
+      "image": "flip-flops-njadua.webp",
+      "audio_cs": "flip-flops_cs.mp3",
+      "audio_en": "flip-flops_en.mp3"
+    },
+    {
+      "id": "good-mood",
+      "czech": "dobrá nálada",
+      "english": "good mood",
+      "pronunciation": "gud múd",
+      "image_prompt": "a bright yellow round smiley face balloon floating among colorful party balloons and confetti against a clear blue sky in cheerful sunny tones",
+      "image": "good-mood-txhygu.webp",
+      "audio_cs": "good-mood_cs.mp3",
+      "audio_en": "good-mood_en.mp3"
+    },
+    {
+      "id": "passport",
+      "czech": "pas",
+      "english": "passport",
+      "pronunciation": "pásport",
+      "image_prompt": "a dark red travel passport booklet resting on a colorful world map beside a small toy airplane on a sunny table",
+      "image": "passport-wrkuyc.webp",
+      "audio_cs": "passport_cs.mp3",
+      "audio_en": "passport_en.mp3"
+    },
+    {
+      "id": "id-card",
+      "czech": "občanský průkaz",
+      "english": "ID card",
+      "pronunciation": "ajdý kárd",
+      "image_prompt": "a plastic laminated identity card with a blank photo placeholder lying on a clean wooden desk in bright daylight",
+      "image": "id-card-vcwiqb.webp",
+      "audio_cs": "id-card_cs.mp3",
+      "audio_en": "id-card_en.mp3"
+    },
+    {
+      "id": "pills",
+      "czech": "prášky",
+      "english": "pills",
+      "pronunciation": "pils",
+      "image_prompt": "a few colorful round tablets spilling from an open white medicine bottle onto a clean bright surface",
+      "image": "pills-zdiyjm.webp",
+      "audio_cs": "pills_cs.mp3",
+      "audio_en": "pills_en.mp3"
+    },
+    {
+      "id": "toothbrush",
+      "czech": "kartáček",
+      "english": "toothbrush",
+      "pronunciation": "túsbraš",
+      "image_prompt": "a bright blue toothbrush with a stripe of white toothpaste standing in a glass on a sunny bathroom sink",
+      "image": "toothbrush-tnntcq.webp",
+      "audio_cs": "toothbrush_cs.mp3",
+      "audio_en": "toothbrush_en.mp3"
+    },
+    {
+      "id": "sunscreen",
+      "czech": "opalovací krém",
+      "english": "sunscreen",
+      "pronunciation": "sanskrýn",
+      "image_prompt": "a white bottle of sun lotion with a yellow cap lying on golden beach sand beside a pair of sunglasses under bright sun",
+      "image": "sunscreen-bgxvko.webp",
+      "audio_cs": "sunscreen_cs.mp3",
+      "audio_en": "sunscreen_en.mp3"
+    },
+    {
+      "id": "sunglasses",
+      "czech": "sluneční brýle",
+      "english": "sunglasses",
+      "pronunciation": "sanglásyz",
+      "image_prompt": "a stylish pair of dark sunglasses with reflective lenses resting on golden sand under a bright blue summer sky",
+      "image": "sunglasses-xprjvg.webp",
+      "audio_cs": "sunglasses_cs.mp3",
+      "audio_en": "sunglasses_en.mp3"
+    },
+    {
+      "id": "hat",
+      "czech": "klobouk",
+      "english": "hat",
+      "pronunciation": "het",
+      "image_prompt": "a wide-brimmed straw sun hat with a colorful band resting on a sunny beach chair under a clear blue sky",
+      "image": "hat-zgekau.webp",
+      "audio_cs": "hat_cs.mp3",
+      "audio_en": "hat_en.mp3"
+    },
+    {
+      "id": "cap",
+      "czech": "kšiltovka",
+      "english": "cap",
+      "pronunciation": "kep",
+      "image_prompt": "a bright red baseball cap resting on a green grassy field under warm sunlight with a blue sky behind",
+      "image": "cap-peretf.webp",
+      "audio_cs": "cap_cs.mp3",
+      "audio_en": "cap_en.mp3"
+    },
+    {
+      "id": "nun",
+      "czech": "jeptiška",
+      "english": "nun",
+      "pronunciation": "nan",
+      "image_prompt": "a smiling woman in a traditional black and white religious habit standing peacefully in a sunny stone courtyard",
+      "image": "nun-ixdibr.webp",
+      "audio_cs": "nun_cs.mp3",
+      "audio_en": "nun_en.mp3"
+    }
+  ]
+}

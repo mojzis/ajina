@@ -1,6 +1,13 @@
 {
-  "current_week": "2026-W20",
+  "current_week": "2026-W21",
   "weeks": [
+    {
+      "week_id": "2026-W21",
+      "title": "Čas a cestování",
+      "title_en": "Time and Travel",
+      "published": "2026-06-04",
+      "word_count": 44
+    },
     {
       "week_id": "2026-W20",
       "title": "Jídlo a město",
